@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: a304baf139761ebfcc7f929d9b78cb39
+  docVersion: 1.0.0
+  speakeasyVersion: 1.74.3
+  generationVersion: 2.86.6
 generation:
   comments:
     disableComments: false
@@ -7,7 +12,12 @@ generation:
   sdkClassName: Preset
   singleTagPerOp: false
   tagNamespacingDisabled: false
+features:
+  terraform:
+    core: 2.83.2
+    globalSecurity: 2.81.1
+    globalServerURLs: 2.82.0
 terraform:
-  version: 0.0.1
+  version: 0.1.0
   author: Preset
   packageName: Preset
