@@ -2,7 +2,7 @@ terraform {
   required_providers {
     Preset = {
       source  = "Preset/Preset"
-      version = "0.1.0"
+      version = "0.1.1"
     }
   }
 }
