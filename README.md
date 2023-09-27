@@ -10,7 +10,7 @@ terraform {
   required_providers {
     Preset = {
       source  = "Preset/Preset"
-      version = "0.6.0"
+      version = "0.6.1"
     }
   }
 }
@@ -45,8 +45,6 @@ TF_REATTACH_PROVIDERS=... terraform apply
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
