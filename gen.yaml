@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: a304baf139761ebfcc7f929d9b78cb39
   docVersion: 1.0.0
-  speakeasyVersion: 1.91.3
-  generationVersion: 2.139.1
+  speakeasyVersion: 1.92.2
+  generationVersion: 2.142.2
 generation:
   comments:
     disableComments: false
@@ -14,10 +14,10 @@ generation:
   tagNamespacingDisabled: false
 features:
   terraform:
-    core: 2.90.0
+    core: 2.91.1
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 terraform:
-  version: 0.7.0
+  version: 0.8.0
   author: Preset
   packageName: Preset
