@@ -13,6 +13,13 @@ type PostV1AuthRequest struct {
 	RequestBody *PostV1AuthRequestBody `request:"mediaType=application/json"`
 }
 
+func (o *PostV1AuthRequest) GetRequestBody() *PostV1AuthRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
 type PostV1AuthResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -20,4 +27,25 @@ type PostV1AuthResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostV1AuthResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostV1AuthResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostV1AuthResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

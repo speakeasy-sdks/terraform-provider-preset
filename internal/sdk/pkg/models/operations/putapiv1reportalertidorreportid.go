@@ -13,6 +13,13 @@ type PutAPIV1ReportAlertIDORReportIDRequest struct {
 	RequestBody *PutAPIV1ReportAlertIDORReportIDRequestBody `request:"mediaType=application/json"`
 }
 
+func (o *PutAPIV1ReportAlertIDORReportIDRequest) GetRequestBody() *PutAPIV1ReportAlertIDORReportIDRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
 type PutAPIV1ReportAlertIDORReportIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -20,4 +27,25 @@ type PutAPIV1ReportAlertIDORReportIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PutAPIV1ReportAlertIDORReportIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PutAPIV1ReportAlertIDORReportIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PutAPIV1ReportAlertIDORReportIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

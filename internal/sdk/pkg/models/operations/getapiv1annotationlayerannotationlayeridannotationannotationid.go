@@ -12,6 +12,27 @@ type GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest struc
 	Referer           *string `header:"style=simple,explode=false,name=Referer"`
 }
 
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) GetAnnotationID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationID
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) GetAnnotationLayerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationLayerID
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
 type GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -19,4 +40,25 @@ type GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse stru
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

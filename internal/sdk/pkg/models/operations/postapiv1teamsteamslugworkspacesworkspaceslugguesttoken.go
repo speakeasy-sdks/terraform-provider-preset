@@ -15,6 +15,27 @@ type PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequest struct {
 	WorkspaceSlug string                                                              `pathParam:"style=simple,explode=false,name=WorkspaceSlug"`
 }
 
+func (o *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequest) GetRequestBody() *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
+func (o *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
+func (o *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequest) GetWorkspaceSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.WorkspaceSlug
+}
+
 type PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

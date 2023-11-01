@@ -17,6 +17,27 @@ type PostAPIV1ChartDataRequest struct {
 	SliceID *string `queryParam:"style=form,explode=true,name=slice_id"`
 }
 
+func (o *PostAPIV1ChartDataRequest) GetRequestBody() *PostAPIV1ChartDataRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
+func (o *PostAPIV1ChartDataRequest) GetForce() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Force
+}
+
+func (o *PostAPIV1ChartDataRequest) GetSliceID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SliceID
+}
+
 type PostAPIV1ChartDataResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -24,4 +45,25 @@ type PostAPIV1ChartDataResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostAPIV1ChartDataResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIV1ChartDataResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIV1ChartDataResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

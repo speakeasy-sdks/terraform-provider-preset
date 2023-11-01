@@ -11,13 +11,48 @@ type PostAPIV1AssetsImportRequestBodyBundle struct {
 	Content []byte `multipartForm:"content"`
 }
 
+func (o *PostAPIV1AssetsImportRequestBodyBundle) GetBundle() string {
+	if o == nil {
+		return ""
+	}
+	return o.Bundle
+}
+
+func (o *PostAPIV1AssetsImportRequestBodyBundle) GetContent() []byte {
+	if o == nil {
+		return []byte{}
+	}
+	return o.Content
+}
+
 type PostAPIV1AssetsImportRequestBody struct {
 	Bundle    *PostAPIV1AssetsImportRequestBodyBundle `multipartForm:"file"`
 	Passwords *string                                 `multipartForm:"name=passwords"`
 }
 
+func (o *PostAPIV1AssetsImportRequestBody) GetBundle() *PostAPIV1AssetsImportRequestBodyBundle {
+	if o == nil {
+		return nil
+	}
+	return o.Bundle
+}
+
+func (o *PostAPIV1AssetsImportRequestBody) GetPasswords() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Passwords
+}
+
 type PostAPIV1AssetsImportRequest struct {
 	RequestBody *PostAPIV1AssetsImportRequestBody `request:"mediaType=multipart/form-data"`
+}
+
+func (o *PostAPIV1AssetsImportRequest) GetRequestBody() *PostAPIV1AssetsImportRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
 }
 
 type PostAPIV1AssetsImportResponse struct {
@@ -27,4 +62,25 @@ type PostAPIV1AssetsImportResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostAPIV1AssetsImportResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIV1AssetsImportResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIV1AssetsImportResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

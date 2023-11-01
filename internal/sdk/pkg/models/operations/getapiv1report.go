@@ -12,6 +12,13 @@ type GetAPIV1ReportRequest struct {
 	Q *string `queryParam:"style=form,explode=true,name=q"`
 }
 
+func (o *GetAPIV1ReportRequest) GetQ() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Q
+}
+
 type GetAPIV1ReportResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -19,4 +26,25 @@ type GetAPIV1ReportResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1ReportResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1ReportResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1ReportResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

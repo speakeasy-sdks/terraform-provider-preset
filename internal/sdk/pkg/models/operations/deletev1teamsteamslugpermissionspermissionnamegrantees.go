@@ -12,6 +12,27 @@ type DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest struct {
 	Referer        *string `header:"style=simple,explode=false,name=referer"`
 }
 
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) GetPermissionName() string {
+	if o == nil {
+		return ""
+	}
+	return o.PermissionName
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
 type DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -19,4 +40,25 @@ type DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

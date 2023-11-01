@@ -10,6 +10,13 @@ type GetAPIV1DatasetDatasetIDRequest struct {
 	DatasetID string `pathParam:"style=simple,explode=false,name=DatasetID"`
 }
 
+func (o *GetAPIV1DatasetDatasetIDRequest) GetDatasetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DatasetID
+}
+
 type GetAPIV1DatasetDatasetIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -17,4 +24,25 @@ type GetAPIV1DatasetDatasetIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1DatasetDatasetIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1DatasetDatasetIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1DatasetDatasetIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

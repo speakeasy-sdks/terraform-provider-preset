@@ -11,15 +11,64 @@ type PostAPIV1DatasetImportRequestBodyFormData struct {
 	FormData string `multipartForm:"name=formData"`
 }
 
+func (o *PostAPIV1DatasetImportRequestBodyFormData) GetContent() []byte {
+	if o == nil {
+		return []byte{}
+	}
+	return o.Content
+}
+
+func (o *PostAPIV1DatasetImportRequestBodyFormData) GetFormData() string {
+	if o == nil {
+		return ""
+	}
+	return o.FormData
+}
+
 type PostAPIV1DatasetImportRequestBody struct {
 	FormData  *PostAPIV1DatasetImportRequestBodyFormData `multipartForm:"file"`
 	Overwrite *bool                                      `multipartForm:"name=overwrite"`
 	Passwords *string                                    `multipartForm:"name=passwords"`
 }
 
+func (o *PostAPIV1DatasetImportRequestBody) GetFormData() *PostAPIV1DatasetImportRequestBodyFormData {
+	if o == nil {
+		return nil
+	}
+	return o.FormData
+}
+
+func (o *PostAPIV1DatasetImportRequestBody) GetOverwrite() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Overwrite
+}
+
+func (o *PostAPIV1DatasetImportRequestBody) GetPasswords() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Passwords
+}
+
 type PostAPIV1DatasetImportRequest struct {
 	Referer     *string                            `header:"style=simple,explode=false,name=Referer"`
 	RequestBody *PostAPIV1DatasetImportRequestBody `request:"mediaType=multipart/form-data"`
+}
+
+func (o *PostAPIV1DatasetImportRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *PostAPIV1DatasetImportRequest) GetRequestBody() *PostAPIV1DatasetImportRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
 }
 
 type PostAPIV1DatasetImportResponse struct {
@@ -29,4 +78,25 @@ type PostAPIV1DatasetImportResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostAPIV1DatasetImportResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIV1DatasetImportResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIV1DatasetImportResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

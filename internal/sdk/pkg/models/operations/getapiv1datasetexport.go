@@ -11,6 +11,13 @@ type GetAPIV1DatasetExportRequest struct {
 	Q *string `queryParam:"style=form,explode=true,name=q"`
 }
 
+func (o *GetAPIV1DatasetExportRequest) GetQ() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Q
+}
+
 type GetAPIV1DatasetExportResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -18,4 +25,25 @@ type GetAPIV1DatasetExportResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1DatasetExportResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1DatasetExportResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1DatasetExportResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

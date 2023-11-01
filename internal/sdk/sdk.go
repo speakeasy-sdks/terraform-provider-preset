@@ -5,6 +5,7 @@ package sdk
 import (
 	"Preset/internal/sdk/pkg/models/shared"
 	"Preset/internal/sdk/pkg/utils"
+	"context"
 	"fmt"
 	"net/http"
 	"time"
@@ -44,7 +45,7 @@ func Float64(f float64) *float64 { return &f }
 type sdkConfiguration struct {
 	DefaultClient     HTTPClient
 	SecurityClient    HTTPClient
-	Security          *shared.Security
+	Security          func(context.Context) (interface{}, error)
 	ServerURL         string
 	ServerIndex       int
 	Language          string
@@ -52,6 +53,7 @@ type sdkConfiguration struct {
 	SDKVersion        string
 	GenVersion        string
 	UserAgent         string
+	RetryConfig       *utils.RetryConfig
 }
 
 func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
@@ -62,7 +64,7 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 	return ServerList[c.ServerIndex], nil
 }
 
-// Preset - Preset API: Welcome to the Preset API Collection.
+// Preset API: Welcome to the Preset API Collection.
 //
 // ## Overview
 //
@@ -139,36 +141,36 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 //
 // Use the **Get a JWT Token** request to generate a `JWT Token.`
 type Preset struct {
-	// Authentication - API to authenticate and get a JWT token to interact with the Preset/Superset APIs.
+	// API to authenticate and get a JWT token to interact with the Preset/Superset APIs.
 	Authentication *authentication
-	// PresetManagerAPIsGreaterThanEmbedded - APIs associated with the Embedded functionality.
+	// APIs associated with the Embedded functionality.
 	PresetManagerAPIsGreaterThanEmbedded *presetManagerAPIsGreaterThanEmbedded
-	// PresetManagerAPIsGreaterThanPermissions - APIs to manage permissions on the Workspace level.
+	// APIs to manage permissions on the Workspace level.
 	//
 	// Note that all Permission APIs require **Team Admin** permission.
 	PresetManagerAPIsGreaterThanPermissions *presetManagerAPIsGreaterThanPermissions
-	// PresetManagerAPIsGreaterThanTeams - APIs to manage your Preset team.
+	// APIs to manage your Preset team.
 	PresetManagerAPIsGreaterThanTeams *presetManagerAPIsGreaterThanTeams
-	// PresetManagerAPIsGreaterThanWorkspaces - APIs to manage your Workspaces.
+	// APIs to manage your Workspaces.
 	PresetManagerAPIsGreaterThanWorkspaces *presetManagerAPIsGreaterThanWorkspaces
-	// SupersetAPIsOpenSourceGreaterThanAlertsAndReports - APIs to manage your Alerts & Reports.
+	// APIs to manage your Alerts & Reports.
 	SupersetAPIsOpenSourceGreaterThanAlertsAndReports *supersetAPIsOpenSourceGreaterThanAlertsAndReports
-	// SupersetAPIsOpenSourceGreaterThanAnnotationLayers - API to manage your Annotation Layers.
+	// API to manage your Annotation Layers.
 	SupersetAPIsOpenSourceGreaterThanAnnotationLayers *supersetAPIsOpenSourceGreaterThanAnnotationLayers
-	// SupersetAPIsOpenSourceGreaterThanAssets - APIs to export/import an `assets` ZIP file from the Workspace, which includes all:
+	// APIs to export/import an `assets` ZIP file from the Workspace, which includes all:
 	//
 	// *   databases.
 	// *   datasets.
 	// *   charts.
 	// *   saved queries.
 	SupersetAPIsOpenSourceGreaterThanAssets *supersetAPIsOpenSourceGreaterThanAssets
-	// SupersetAPIsOpenSourceGreaterThanCharts - APIs to manage Charts on your Workspace.
+	// APIs to manage Charts on your Workspace.
 	SupersetAPIsOpenSourceGreaterThanCharts *supersetAPIsOpenSourceGreaterThanCharts
-	// SupersetAPIsOpenSourceGreaterThanDashboards - APIs to manage your Dashboards.
+	// APIs to manage your Dashboards.
 	SupersetAPIsOpenSourceGreaterThanDashboards *supersetAPIsOpenSourceGreaterThanDashboards
-	// SupersetAPIsOpenSourceGreaterThanDatabases - APIs to manage your database connections.
+	// APIs to manage your database connections.
 	SupersetAPIsOpenSourceGreaterThanDatabases *supersetAPIsOpenSourceGreaterThanDatabases
-	// SupersetAPIsOpenSourceGreaterThanDatasets - APIs to manage your datasets.
+	// APIs to manage your datasets.
 	SupersetAPIsOpenSourceGreaterThanDatasets *supersetAPIsOpenSourceGreaterThanDatasets
 	SupersetAPIsOpenSourceGreaterThanQueries  *supersetAPIsOpenSourceGreaterThanQueries
 	SupersetAPIsOpenSourceGreaterThanSQLLab   *supersetAPIsOpenSourceGreaterThanSQLLab
@@ -214,10 +216,31 @@ func WithClient(client HTTPClient) SDKOption {
 	}
 }
 
+func withSecurity(security interface{}) func(context.Context) (interface{}, error) {
+	return func(context.Context) (interface{}, error) {
+		return &security, nil
+	}
+}
+
 // WithSecurity configures the SDK to use the provided security details
 func WithSecurity(security shared.Security) SDKOption {
 	return func(sdk *Preset) {
-		sdk.sdkConfiguration.Security = &security
+		sdk.sdkConfiguration.Security = withSecurity(security)
+	}
+}
+
+// WithSecuritySource configures the SDK to invoke the Security Source function on each method call to determine authentication
+func WithSecuritySource(security func(context.Context) (shared.Security, error)) SDKOption {
+	return func(sdk *Preset) {
+		sdk.sdkConfiguration.Security = func(ctx context.Context) (interface{}, error) {
+			return security(ctx)
+		}
+	}
+}
+
+func WithRetryConfig(retryConfig utils.RetryConfig) SDKOption {
+	return func(sdk *Preset) {
+		sdk.sdkConfiguration.RetryConfig = &retryConfig
 	}
 }
 
@@ -225,11 +248,11 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Preset {
 	sdk := &Preset{
 		sdkConfiguration: sdkConfiguration{
-			Language:          "terraform",
+			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.9.1",
-			GenVersion:        "2.150.0",
-			UserAgent:         "speakeasy-sdk/terraform 0.9.1 2.150.0 1.0.0 Preset",
+			SDKVersion:        "0.10.0",
+			GenVersion:        "2.173.0",
+			UserAgent:         "speakeasy-sdk/go 0.10.0 2.173.0 1.0.0 Preset",
 		},
 	}
 	for _, opt := range opts {

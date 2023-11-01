@@ -15,6 +15,27 @@ type PatchV1TeamsTeamSlugMembershipsUserIDRequest struct {
 	UserID      string                                            `pathParam:"style=simple,explode=false,name=UserID"`
 }
 
+func (o *PatchV1TeamsTeamSlugMembershipsUserIDRequest) GetRequestBody() *PatchV1TeamsTeamSlugMembershipsUserIDRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
+func (o *PatchV1TeamsTeamSlugMembershipsUserIDRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
+func (o *PatchV1TeamsTeamSlugMembershipsUserIDRequest) GetUserID() string {
+	if o == nil {
+		return ""
+	}
+	return o.UserID
+}
+
 type PatchV1TeamsTeamSlugMembershipsUserIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PatchV1TeamsTeamSlugMembershipsUserIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PatchV1TeamsTeamSlugMembershipsUserIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PatchV1TeamsTeamSlugMembershipsUserIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PatchV1TeamsTeamSlugMembershipsUserIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

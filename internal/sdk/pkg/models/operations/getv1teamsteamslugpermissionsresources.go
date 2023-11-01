@@ -10,6 +10,13 @@ type GetV1TeamsTeamSlugPermissionsResourcesRequest struct {
 	TeamSlug string `pathParam:"style=simple,explode=false,name=TeamSlug"`
 }
 
+func (o *GetV1TeamsTeamSlugPermissionsResourcesRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
 type GetV1TeamsTeamSlugPermissionsResourcesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -17,4 +24,25 @@ type GetV1TeamsTeamSlugPermissionsResourcesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetV1TeamsTeamSlugPermissionsResourcesResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetV1TeamsTeamSlugPermissionsResourcesResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetV1TeamsTeamSlugPermissionsResourcesResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

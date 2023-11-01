@@ -15,6 +15,27 @@ type PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest struct {
 	TeamSlug       string                                                           `pathParam:"style=simple,explode=false,name=TeamSlug"`
 }
 
+func (o *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) GetPermissionName() string {
+	if o == nil {
+		return ""
+	}
+	return o.PermissionName
+}
+
+func (o *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) GetRequestBody() *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
+func (o *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
 type PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

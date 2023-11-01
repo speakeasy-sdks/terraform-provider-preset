@@ -15,6 +15,27 @@ type PutAPIV1DatasetDatasetIDRequest struct {
 	RequestBody *PutAPIV1DatasetDatasetIDRequestBody `request:"mediaType=application/json"`
 }
 
+func (o *PutAPIV1DatasetDatasetIDRequest) GetDatasetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DatasetID
+}
+
+func (o *PutAPIV1DatasetDatasetIDRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *PutAPIV1DatasetDatasetIDRequest) GetRequestBody() *PutAPIV1DatasetDatasetIDRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
 type PutAPIV1DatasetDatasetIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PutAPIV1DatasetDatasetIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PutAPIV1DatasetDatasetIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PutAPIV1DatasetDatasetIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PutAPIV1DatasetDatasetIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

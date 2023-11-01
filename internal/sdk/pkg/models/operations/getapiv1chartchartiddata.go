@@ -10,6 +10,13 @@ type GetAPIV1ChartChartIDDataRequest struct {
 	ChartID string `pathParam:"style=simple,explode=false,name=ChartID"`
 }
 
+func (o *GetAPIV1ChartChartIDDataRequest) GetChartID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ChartID
+}
+
 type GetAPIV1ChartChartIDDataResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -17,4 +24,25 @@ type GetAPIV1ChartChartIDDataResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1ChartChartIDDataResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1ChartChartIDDataResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1ChartChartIDDataResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

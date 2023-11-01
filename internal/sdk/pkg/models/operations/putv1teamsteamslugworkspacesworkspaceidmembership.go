@@ -15,6 +15,27 @@ type PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequest struct {
 	WorkspaceID string                                                        `pathParam:"style=simple,explode=false,name=WorkspaceID"`
 }
 
+func (o *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequest) GetRequestBody() *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
+func (o *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
+func (o *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequest) GetWorkspaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.WorkspaceID
+}
+
 type PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

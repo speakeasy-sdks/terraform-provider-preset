@@ -11,6 +11,20 @@ type DeleteAPIV1DashboardDashboardIDRequest struct {
 	Referer     *string `header:"style=simple,explode=false,name=Referer"`
 }
 
+func (o *DeleteAPIV1DashboardDashboardIDRequest) GetDashboardID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DashboardID
+}
+
+func (o *DeleteAPIV1DashboardDashboardIDRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
 type DeleteAPIV1DashboardDashboardIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -18,4 +32,25 @@ type DeleteAPIV1DashboardDashboardIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *DeleteAPIV1DashboardDashboardIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteAPIV1DashboardDashboardIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteAPIV1DashboardDashboardIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

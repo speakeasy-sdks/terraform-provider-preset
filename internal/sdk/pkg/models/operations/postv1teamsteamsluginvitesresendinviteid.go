@@ -11,6 +11,20 @@ type PostV1TeamsTeamSlugInvitesResendInviteIDRequest struct {
 	TeamSlug string `pathParam:"style=simple,explode=false,name=TeamSlug"`
 }
 
+func (o *PostV1TeamsTeamSlugInvitesResendInviteIDRequest) GetInviteID() string {
+	if o == nil {
+		return ""
+	}
+	return o.InviteID
+}
+
+func (o *PostV1TeamsTeamSlugInvitesResendInviteIDRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
 type PostV1TeamsTeamSlugInvitesResendInviteIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -18,4 +32,25 @@ type PostV1TeamsTeamSlugInvitesResendInviteIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostV1TeamsTeamSlugInvitesResendInviteIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostV1TeamsTeamSlugInvitesResendInviteIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostV1TeamsTeamSlugInvitesResendInviteIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

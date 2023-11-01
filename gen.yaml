@@ -2,22 +2,25 @@ configVersion: 1.0.0
 management:
   docChecksum: a304baf139761ebfcc7f929d9b78cb39
   docVersion: 1.0.0
-  speakeasyVersion: 1.96.1
-  generationVersion: 2.150.0
+  speakeasyVersion: 1.109.2
+  generationVersion: 2.173.0
 generation:
   comments:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
+  repoURL: https://github.com/speakeasy-sdks/terraform-provider-preset.git
   sdkClassName: Preset
   singleTagPerOp: false
   tagNamespacingDisabled: false
 features:
   terraform:
-    core: 2.92.1
+    core: 2.93.3
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 terraform:
-  version: 0.9.1
+  version: 0.10.0
   author: Preset
   packageName: Preset
+  published: true
+  repoSubDirectory: .

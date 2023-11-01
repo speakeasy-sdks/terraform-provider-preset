@@ -10,6 +10,13 @@ type GetAPIV1DatabaseDatabaseIDConnectionRequest struct {
 	DatabaseID string `pathParam:"style=simple,explode=false,name=DatabaseID"`
 }
 
+func (o *GetAPIV1DatabaseDatabaseIDConnectionRequest) GetDatabaseID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DatabaseID
+}
+
 type GetAPIV1DatabaseDatabaseIDConnectionResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -17,4 +24,25 @@ type GetAPIV1DatabaseDatabaseIDConnectionResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1DatabaseDatabaseIDConnectionResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1DatabaseDatabaseIDConnectionResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1DatabaseDatabaseIDConnectionResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

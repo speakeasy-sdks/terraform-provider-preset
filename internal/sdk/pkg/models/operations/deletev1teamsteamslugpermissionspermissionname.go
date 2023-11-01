@@ -11,6 +11,20 @@ type DeleteV1TeamsTeamSlugPermissionsPermissionNameRequest struct {
 	TeamSlug       string `pathParam:"style=simple,explode=false,name=TeamSlug"`
 }
 
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameRequest) GetPermissionName() string {
+	if o == nil {
+		return ""
+	}
+	return o.PermissionName
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameRequest) GetTeamSlug() string {
+	if o == nil {
+		return ""
+	}
+	return o.TeamSlug
+}
+
 type DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -18,4 +32,25 @@ type DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

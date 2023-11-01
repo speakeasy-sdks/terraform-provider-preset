@@ -10,6 +10,13 @@ type GetAPIV1DashboardDashboardIDChartsRequest struct {
 	DashboardID string `pathParam:"style=simple,explode=false,name=DashboardID"`
 }
 
+func (o *GetAPIV1DashboardDashboardIDChartsRequest) GetDashboardID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DashboardID
+}
+
 type GetAPIV1DashboardDashboardIDChartsResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -17,4 +24,25 @@ type GetAPIV1DashboardDashboardIDChartsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1DashboardDashboardIDChartsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1DashboardDashboardIDChartsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1DashboardDashboardIDChartsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

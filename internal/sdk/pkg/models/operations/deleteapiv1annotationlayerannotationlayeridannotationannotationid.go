@@ -12,6 +12,27 @@ type DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest st
 	Referer           *string `header:"style=simple,explode=false,name=Referer"`
 }
 
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) GetAnnotationID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationID
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) GetAnnotationLayerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationLayerID
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
 type DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -19,4 +40,25 @@ type DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse s
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

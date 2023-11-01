@@ -12,6 +12,20 @@ type DeleteAPIV1AnnotationLayerRequest struct {
 	Q *string `queryParam:"style=form,explode=true,name=q"`
 }
 
+func (o *DeleteAPIV1AnnotationLayerRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *DeleteAPIV1AnnotationLayerRequest) GetQ() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Q
+}
+
 type DeleteAPIV1AnnotationLayerResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -19,4 +33,25 @@ type DeleteAPIV1AnnotationLayerResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *DeleteAPIV1AnnotationLayerResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteAPIV1AnnotationLayerResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteAPIV1AnnotationLayerResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

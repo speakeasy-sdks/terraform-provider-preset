@@ -15,6 +15,27 @@ type PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest struct {
 	RequestBody       *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequestBody `request:"mediaType=application/json"`
 }
 
+func (o *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetAnnotationLayerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationLayerID
+}
+
+func (o *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetRequestBody() *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
 type PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

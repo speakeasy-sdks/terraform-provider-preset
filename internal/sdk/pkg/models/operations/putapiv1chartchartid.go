@@ -15,6 +15,27 @@ type PutAPIV1ChartChartIDRequest struct {
 	RequestBody *PutAPIV1ChartChartIDRequestBody `request:"mediaType=application/json"`
 }
 
+func (o *PutAPIV1ChartChartIDRequest) GetChartID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ChartID
+}
+
+func (o *PutAPIV1ChartChartIDRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *PutAPIV1ChartChartIDRequest) GetRequestBody() *PutAPIV1ChartChartIDRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
 type PutAPIV1ChartChartIDResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -22,4 +43,25 @@ type PutAPIV1ChartChartIDResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PutAPIV1ChartChartIDResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PutAPIV1ChartChartIDResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PutAPIV1ChartChartIDResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

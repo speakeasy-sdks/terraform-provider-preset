@@ -13,6 +13,27 @@ type DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest struct {
 	Q *string `queryParam:"style=form,explode=true,name=q"`
 }
 
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetAnnotationLayerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationLayerID
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetQ() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Q
+}
+
 type DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -20,4 +41,25 @@ type DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

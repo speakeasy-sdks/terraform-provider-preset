@@ -11,15 +11,64 @@ type PostAPIV1DashboardImportRequestBodyFormData struct {
 	FormData string `multipartForm:"name=formData"`
 }
 
+func (o *PostAPIV1DashboardImportRequestBodyFormData) GetContent() []byte {
+	if o == nil {
+		return []byte{}
+	}
+	return o.Content
+}
+
+func (o *PostAPIV1DashboardImportRequestBodyFormData) GetFormData() string {
+	if o == nil {
+		return ""
+	}
+	return o.FormData
+}
+
 type PostAPIV1DashboardImportRequestBody struct {
 	FormData  *PostAPIV1DashboardImportRequestBodyFormData `multipartForm:"file"`
 	Overwrite *bool                                        `multipartForm:"name=overwrite"`
 	Passwords *string                                      `multipartForm:"name=passwords"`
 }
 
+func (o *PostAPIV1DashboardImportRequestBody) GetFormData() *PostAPIV1DashboardImportRequestBodyFormData {
+	if o == nil {
+		return nil
+	}
+	return o.FormData
+}
+
+func (o *PostAPIV1DashboardImportRequestBody) GetOverwrite() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.Overwrite
+}
+
+func (o *PostAPIV1DashboardImportRequestBody) GetPasswords() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Passwords
+}
+
 type PostAPIV1DashboardImportRequest struct {
 	Referer     *string                              `header:"style=simple,explode=false,name=Referer"`
 	RequestBody *PostAPIV1DashboardImportRequestBody `request:"mediaType=multipart/form-data"`
+}
+
+func (o *PostAPIV1DashboardImportRequest) GetReferer() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Referer
+}
+
+func (o *PostAPIV1DashboardImportRequest) GetRequestBody() *PostAPIV1DashboardImportRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
 }
 
 type PostAPIV1DashboardImportResponse struct {
@@ -29,4 +78,25 @@ type PostAPIV1DashboardImportResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *PostAPIV1DashboardImportResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIV1DashboardImportResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIV1DashboardImportResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

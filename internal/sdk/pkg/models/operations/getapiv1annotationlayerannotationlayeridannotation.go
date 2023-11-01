@@ -10,6 +10,13 @@ type GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest struct {
 	AnnotationLayerID string `pathParam:"style=simple,explode=false,name=AnnotationLayerID"`
 }
 
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) GetAnnotationLayerID() string {
+	if o == nil {
+		return ""
+	}
+	return o.AnnotationLayerID
+}
+
 type GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -17,4 +24,25 @@ type GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }
