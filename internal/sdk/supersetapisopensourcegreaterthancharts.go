@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanCharts - APIs to manage Charts on your Workspace.
-type supersetAPIsOpenSourceGreaterThanCharts struct {
+// SupersetAPIsOpenSourceGreaterThanCharts - APIs to manage Charts on your Workspace.
+type SupersetAPIsOpenSourceGreaterThanCharts struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanCharts(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanCharts {
-	return &supersetAPIsOpenSourceGreaterThanCharts{
+func newSupersetAPIsOpenSourceGreaterThanCharts(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanCharts {
+	return &SupersetAPIsOpenSourceGreaterThanCharts{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -42,7 +42,7 @@ func newSupersetAPIsOpenSourceGreaterThanCharts(sdkConfig sdkConfiguration) *sup
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{ChartID}}` with the chart `id` retrieved from the **Get all Charts from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) DeleteAPIV1ChartChartID(ctx context.Context, request operations.DeleteAPIV1ChartChartIDRequest) (*operations.DeleteAPIV1ChartChartIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) DeleteAPIV1ChartChartID(ctx context.Context, request operations.DeleteAPIV1ChartChartIDRequest) (*operations.DeleteAPIV1ChartChartIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/chart/{ChartID}", request, nil)
 	if err != nil {
@@ -117,7 +117,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) DeleteAPIV1ChartChartID(ctx co
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1Chart(ctx context.Context, request operations.GetAPIV1ChartRequest) (*operations.GetAPIV1ChartResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) GetAPIV1Chart(ctx context.Context, request operations.GetAPIV1ChartRequest) (*operations.GetAPIV1ChartResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/chart/"
 
@@ -181,7 +181,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1Chart(ctx context.Cont
 // - `{{ChartIDs}` with comma separated chart `ids` retrieved from the **Get all Charts from a Workspace** endpoint.
 //
 // _**Tip:**_ If used in Postman, select `Save Response` and `Save to a File` to get the zip export.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartExport(ctx context.Context, request operations.GetAPIV1ChartExportRequest) (*operations.GetAPIV1ChartExportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartExport(ctx context.Context, request operations.GetAPIV1ChartExportRequest) (*operations.GetAPIV1ChartExportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/chart/export/"
 
@@ -257,7 +257,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartExport(ctx contex
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartRelatedOwners(ctx context.Context, request operations.GetAPIV1ChartRelatedOwnersRequest) (*operations.GetAPIV1ChartRelatedOwnersResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartRelatedOwners(ctx context.Context, request operations.GetAPIV1ChartRelatedOwnersRequest) (*operations.GetAPIV1ChartRelatedOwnersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/chart/related/owners"
 
@@ -320,7 +320,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartRelatedOwners(ctx
 //
 //   - `{{ChartID}}` with the chart `id` retrieved from the
 //     **Get all Charts from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartID(ctx context.Context, request operations.GetAPIV1ChartChartIDRequest) (*operations.GetAPIV1ChartChartIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartID(ctx context.Context, request operations.GetAPIV1ChartChartIDRequest) (*operations.GetAPIV1ChartChartIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/chart/{ChartID}", request, nil)
 	if err != nil {
@@ -385,7 +385,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartID(ctx conte
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{ChartID}}` with the `id` retrieved from the **Get all Charts from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartIDCacheScreenshot(ctx context.Context, request operations.GetAPIV1ChartChartIDCacheScreenshotRequest) (*operations.GetAPIV1ChartChartIDCacheScreenshotResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartIDCacheScreenshot(ctx context.Context, request operations.GetAPIV1ChartChartIDCacheScreenshotRequest) (*operations.GetAPIV1ChartChartIDCacheScreenshotResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/chart/{ChartID}/cache_screenshot/", request, nil)
 	if err != nil {
@@ -450,7 +450,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartIDCacheScree
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{ChartID}}` with the chart `id` retrieved from the **Get all Charts from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartIDData(ctx context.Context, request operations.GetAPIV1ChartChartIDDataRequest) (*operations.GetAPIV1ChartChartIDDataResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartIDData(ctx context.Context, request operations.GetAPIV1ChartChartIDDataRequest) (*operations.GetAPIV1ChartChartIDDataResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/chart/{ChartID}/data", request, nil)
 	if err != nil {
@@ -526,7 +526,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) GetAPIV1ChartChartIDData(ctx c
 // *   `viz_type` by the visualization type. You can find this with the **Get a Chart** endpoint for a similar chart.
 // *   `datasource_id` by the id of the dataset powering your chart.
 // *   `datasource_type` by the type of the underlying dataset.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) PostAPIV1Chart(ctx context.Context, request operations.PostAPIV1ChartRequest) (*operations.PostAPIV1ChartResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) PostAPIV1Chart(ctx context.Context, request operations.PostAPIV1ChartRequest) (*operations.PostAPIV1ChartResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/chart"
 
@@ -600,7 +600,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) PostAPIV1Chart(ctx context.Con
 // - `{{ChartID}}` with the `id` retrieved from the **Get all Charts from a Workspace** endpoint.
 //
 // The body payload can vary depending on the **visualization type** used and also the **chart configuration**, The easiest way to get the accurate payload is retrieving the `query_context` data from the **Get a Chart** endpoint, and then set `force` to `true` both in the top level and also inside `form_data`.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) PostAPIV1ChartData(ctx context.Context, request operations.PostAPIV1ChartDataRequest) (*operations.PostAPIV1ChartDataResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) PostAPIV1ChartData(ctx context.Context, request operations.PostAPIV1ChartDataRequest) (*operations.PostAPIV1ChartDataResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/chart/data"
 
@@ -685,7 +685,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) PostAPIV1ChartData(ctx context
 // - For the `overwrite` field:
 //   - If the Chart already exists on the destination Workspace, set it as `true` to overwrite it.
 //   - If the Chart doesn't exist in there yet, you can remove this field from the body.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) PostAPIV1ChartImport(ctx context.Context, request operations.PostAPIV1ChartImportRequest) (*operations.PostAPIV1ChartImportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) PostAPIV1ChartImport(ctx context.Context, request operations.PostAPIV1ChartImportRequest) (*operations.PostAPIV1ChartImportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/chart/import/"
 
@@ -773,7 +773,7 @@ func (s *supersetAPIsOpenSourceGreaterThanCharts) PostAPIV1ChartImport(ctx conte
 // - `viz_type` by the visualization type. You can find this with the **Get a Chart** endpoint for a similar chart.
 // - `datasource_id` by the id of the dataset powering your chart.
 // - `datasource_type` by the type of the underlying dataset.
-func (s *supersetAPIsOpenSourceGreaterThanCharts) PutAPIV1ChartChartID(ctx context.Context, request operations.PutAPIV1ChartChartIDRequest) (*operations.PutAPIV1ChartChartIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanCharts) PutAPIV1ChartChartID(ctx context.Context, request operations.PutAPIV1ChartChartIDRequest) (*operations.PutAPIV1ChartChartIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/chart/{ChartID}", request, nil)
 	if err != nil {

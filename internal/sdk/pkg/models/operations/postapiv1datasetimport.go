@@ -6,32 +6,32 @@ import (
 	"net/http"
 )
 
-type PostAPIV1DatasetImportRequestBodyFormData struct {
+type PostAPIV1DatasetImportFormData struct {
 	Content  []byte `multipartForm:"content"`
-	FormData string `multipartForm:"name=formData"`
+	FileName string `multipartForm:"name=formData"`
 }
 
-func (o *PostAPIV1DatasetImportRequestBodyFormData) GetContent() []byte {
+func (o *PostAPIV1DatasetImportFormData) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-func (o *PostAPIV1DatasetImportRequestBodyFormData) GetFormData() string {
+func (o *PostAPIV1DatasetImportFormData) GetFileName() string {
 	if o == nil {
 		return ""
 	}
-	return o.FormData
+	return o.FileName
 }
 
 type PostAPIV1DatasetImportRequestBody struct {
-	FormData  *PostAPIV1DatasetImportRequestBodyFormData `multipartForm:"file"`
-	Overwrite *bool                                      `multipartForm:"name=overwrite"`
-	Passwords *string                                    `multipartForm:"name=passwords"`
+	FormData  *PostAPIV1DatasetImportFormData `multipartForm:"file"`
+	Overwrite *bool                           `multipartForm:"name=overwrite"`
+	Passwords *string                         `multipartForm:"name=passwords"`
 }
 
-func (o *PostAPIV1DatasetImportRequestBody) GetFormData() *PostAPIV1DatasetImportRequestBodyFormData {
+func (o *PostAPIV1DatasetImportRequestBody) GetFormData() *PostAPIV1DatasetImportFormData {
 	if o == nil {
 		return nil
 	}

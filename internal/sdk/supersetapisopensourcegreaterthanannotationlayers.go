@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanAnnotationLayers - API to manage your Annotation Layers.
-type supersetAPIsOpenSourceGreaterThanAnnotationLayers struct {
+// SupersetAPIsOpenSourceGreaterThanAnnotationLayers - API to manage your Annotation Layers.
+type SupersetAPIsOpenSourceGreaterThanAnnotationLayers struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanAnnotationLayers(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanAnnotationLayers {
-	return &supersetAPIsOpenSourceGreaterThanAnnotationLayers{
+func newSupersetAPIsOpenSourceGreaterThanAnnotationLayers(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanAnnotationLayers {
+	return &SupersetAPIsOpenSourceGreaterThanAnnotationLayers{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -43,7 +43,7 @@ func newSupersetAPIsOpenSourceGreaterThanAnnotationLayers(sdkConfig sdkConfigura
 //
 // - `{{AnnotationLayerID}}` with the Annotation Layer `id` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
 // - `{{AnnotationLayerIDs}` with comma separated Annotation Layer `ids` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayer(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerRequest) (*operations.DeleteAPIV1AnnotationLayerResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayer(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerRequest) (*operations.DeleteAPIV1AnnotationLayerResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/annotation_layer/"
 
@@ -111,7 +111,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1Annotatio
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{AnnotationLayerID}}` with the Annotation Layer `id` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayerAnnotationLayerID(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDRequest) (*operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayerAnnotationLayerID(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDRequest) (*operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}", request, nil)
 	if err != nil {
@@ -177,7 +177,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1Annotatio
 //
 // - `{{AnnotationLayerID}}` with the Annotation Layer `id` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
 // - `{{AnnotationIDs}` with comma separated Annotation `ids` retrieved from the **Get all Annotations from an Annotation Layer** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotation(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) (*operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotation(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) (*operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}/annotation/", request, nil)
 	if err != nil {
@@ -247,7 +247,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1Annotatio
 //
 // - `{{AnnotationLayerID}}` with the Annotation Layer `id` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
 // - `{{AnnotationID}}` with the Annotation `id` retrieved from the **Get all Annotations from an Annotation Layer** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationID(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) (*operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationID(ctx context.Context, request operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) (*operations.DeleteAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}/annotation/{AnnotationID}", request, nil)
 	if err != nil {
@@ -322,7 +322,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) DeleteAPIV1Annotatio
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayer(ctx context.Context) (*operations.GetAPIV1AnnotationLayerResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayer(ctx context.Context) (*operations.GetAPIV1AnnotationLayerResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/annotation_layer/"
 
@@ -382,7 +382,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLa
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{AnnotationLayerID}}` with the Annotation Layer `id` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayerAnnotationLayerID(ctx context.Context, request operations.GetAPIV1AnnotationLayerAnnotationLayerIDRequest) (*operations.GetAPIV1AnnotationLayerAnnotationLayerIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayerAnnotationLayerID(ctx context.Context, request operations.GetAPIV1AnnotationLayerAnnotationLayerIDRequest) (*operations.GetAPIV1AnnotationLayerAnnotationLayerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}", request, nil)
 	if err != nil {
@@ -459,7 +459,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLa
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayerAnnotationLayerIDAnnotation(ctx context.Context, request operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) (*operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayerAnnotationLayerIDAnnotation(ctx context.Context, request operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) (*operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}/annotation", request, nil)
 	if err != nil {
@@ -527,7 +527,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLa
 //
 // - `{{AnnotationLayerID}}` with the Annotation Layer `id` retrieved from the **Get all Annotation Layers from a Workspace** endpoint.
 // - `{{AnnotationID}}` with the Annotation `id` retrieved from the **Get all Annotations from an Annotation Layer** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationID(ctx context.Context, request operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) (*operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationID(ctx context.Context, request operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) (*operations.GetAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}/annotation/{AnnotationID}", request, nil)
 	if err != nil {
@@ -595,7 +595,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) GetAPIV1AnnotationLa
 //
 // - `{{AnnotationLayerDescription}}` with a description for the Annotation Layer.
 // - `{{AnnotationLayerName}}` with the desired new name.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PostAPIV1AnnotationLayer(ctx context.Context, request operations.PostAPIV1AnnotationLayerRequest) (*operations.PostAPIV1AnnotationLayerResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) PostAPIV1AnnotationLayer(ctx context.Context, request operations.PostAPIV1AnnotationLayerRequest) (*operations.PostAPIV1AnnotationLayerResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/annotation_layer/"
 
@@ -674,7 +674,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PostAPIV1AnnotationL
 // - `{{AnnotationLongDescription}}` with the annotation's description.
 // - `{{AnnotationTitle}}` with a name for it.
 // - `{{AnnotationStartDTTM}}` with the annotation's datetime start (`YYYY-MM-DD HH:MM`).
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PostAPIV1AnnotationLayerAnnotationLayerIDAnnotation(ctx context.Context, request operations.PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) (*operations.PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) PostAPIV1AnnotationLayerAnnotationLayerIDAnnotation(ctx context.Context, request operations.PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationRequest) (*operations.PostAPIV1AnnotationLayerAnnotationLayerIDAnnotationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}/annotation", request, nil)
 	if err != nil {
@@ -754,7 +754,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PostAPIV1AnnotationL
 //
 // - `{{AnnotationLayerDescription}}` with a description for the Annotation Layer.
 // - `{{AnnotationLayerName}}` with the desired new name.
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PutAPIV1AnnotationLayerAnnotationLayerID(ctx context.Context, request operations.PutAPIV1AnnotationLayerAnnotationLayerIDRequest) (*operations.PutAPIV1AnnotationLayerAnnotationLayerIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) PutAPIV1AnnotationLayerAnnotationLayerID(ctx context.Context, request operations.PutAPIV1AnnotationLayerAnnotationLayerIDRequest) (*operations.PutAPIV1AnnotationLayerAnnotationLayerIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}", request, nil)
 	if err != nil {
@@ -837,7 +837,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PutAPIV1AnnotationLa
 // - `{{AnnotationLongDescription}}` with the annotation's description.
 // - `{{AnnotationShortDescription}}` with a name for it.
 // - `{{AnnotationStartDTTM}}` with the annotation's datetime start (`YYYY-MM-DD HH:MM`).
-func (s *supersetAPIsOpenSourceGreaterThanAnnotationLayers) PutAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationID(ctx context.Context, request operations.PutAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) (*operations.PutAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAnnotationLayers) PutAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationID(ctx context.Context, request operations.PutAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDRequest) (*operations.PutAPIV1AnnotationLayerAnnotationLayerIDAnnotationAnnotationIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/annotation_layer/{AnnotationLayerID}/annotation/{AnnotationID}", request, nil)
 	if err != nil {

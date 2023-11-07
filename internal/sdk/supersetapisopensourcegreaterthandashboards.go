@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanDashboards - APIs to manage your Dashboards.
-type supersetAPIsOpenSourceGreaterThanDashboards struct {
+// SupersetAPIsOpenSourceGreaterThanDashboards - APIs to manage your Dashboards.
+type SupersetAPIsOpenSourceGreaterThanDashboards struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanDashboards(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanDashboards {
-	return &supersetAPIsOpenSourceGreaterThanDashboards{
+func newSupersetAPIsOpenSourceGreaterThanDashboards(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanDashboards {
+	return &SupersetAPIsOpenSourceGreaterThanDashboards{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -42,7 +42,7 @@ func newSupersetAPIsOpenSourceGreaterThanDashboards(sdkConfig sdkConfiguration) 
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DashboardID}}` with the `id` of the desired Dashboard. You can get the `id` using the **Get all Dashboards From a Workspace** endpoint. Alternatively, you can get from the Dashboard URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/dashboard/{{DashboardID}}`.
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) DeleteAPIV1DashboardDashboardID(ctx context.Context, request operations.DeleteAPIV1DashboardDashboardIDRequest) (*operations.DeleteAPIV1DashboardDashboardIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) DeleteAPIV1DashboardDashboardID(ctx context.Context, request operations.DeleteAPIV1DashboardDashboardIDRequest) (*operations.DeleteAPIV1DashboardDashboardIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dashboard/{DashboardID}", request, nil)
 	if err != nil {
@@ -117,7 +117,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) DeleteAPIV1DashboardDashbo
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1Dashboard(ctx context.Context, request operations.GetAPIV1DashboardRequest) (*operations.GetAPIV1DashboardResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1Dashboard(ctx context.Context, request operations.GetAPIV1DashboardRequest) (*operations.GetAPIV1DashboardResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dashboard/"
 
@@ -177,7 +177,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1Dashboard(ctx cont
 // | ap-northeast-1 | `ap1a` |
 //
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardInfo(ctx context.Context, request operations.GetAPIV1DashboardInfoRequest) (*operations.GetAPIV1DashboardInfoResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardInfo(ctx context.Context, request operations.GetAPIV1DashboardInfoRequest) (*operations.GetAPIV1DashboardInfoResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dashboard/_info"
 
@@ -241,7 +241,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardInfo(ctx 
 // - `{{DashboardIDs}}` with the `id`s of the Dashboard(s) you want to export (separated by comma). You can get the `id`s using the **Get all Dashboards From a Workspace** endpoint. Alternatively, you can get from the Dashboard URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/dashboard/{{DashboardID}}`.
 //
 // _**Tip:**_ If used in Postman, select `Save Response` and `Save to a File` to get the zip export.
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardExport(ctx context.Context, request operations.GetAPIV1DashboardExportRequest) (*operations.GetAPIV1DashboardExportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardExport(ctx context.Context, request operations.GetAPIV1DashboardExportRequest) (*operations.GetAPIV1DashboardExportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dashboard/export/"
 
@@ -307,7 +307,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardExport(ct
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DashboardID}}` with the `id` of the desired Dashboard. You can get the `id` using the **Get all Dashboards From a Workspace** endpoint. Alternatively, you can get from the Dashboard URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/dashboard/{{DashboardID}}`.
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboardID(ctx context.Context, request operations.GetAPIV1DashboardDashboardIDRequest) (*operations.GetAPIV1DashboardDashboardIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboardID(ctx context.Context, request operations.GetAPIV1DashboardDashboardIDRequest) (*operations.GetAPIV1DashboardDashboardIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dashboard/{DashboardID}", request, nil)
 	if err != nil {
@@ -384,7 +384,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboard
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboardIDCharts(ctx context.Context, request operations.GetAPIV1DashboardDashboardIDChartsRequest) (*operations.GetAPIV1DashboardDashboardIDChartsResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboardIDCharts(ctx context.Context, request operations.GetAPIV1DashboardDashboardIDChartsRequest) (*operations.GetAPIV1DashboardDashboardIDChartsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dashboard/{DashboardID}/charts", request, nil)
 	if err != nil {
@@ -461,7 +461,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboard
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboardIDDatasets(ctx context.Context, request operations.GetAPIV1DashboardDashboardIDDatasetsRequest) (*operations.GetAPIV1DashboardDashboardIDDatasetsResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboardIDDatasets(ctx context.Context, request operations.GetAPIV1DashboardDashboardIDDatasetsRequest) (*operations.GetAPIV1DashboardDashboardIDDatasetsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dashboard/{DashboardID}/datasets", request, nil)
 	if err != nil {
@@ -530,7 +530,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) GetAPIV1DashboardDashboard
 // - `certification_details` (optional) by the details of certification
 // - `certified_by` (optional) by the certifier
 // - `css` (optional) add any css to the dashboard in a string here
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1Dashboard(ctx context.Context, request operations.PostAPIV1DashboardRequest) (*operations.PostAPIV1DashboardResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1Dashboard(ctx context.Context, request operations.PostAPIV1DashboardRequest) (*operations.PostAPIV1DashboardResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dashboard/"
 
@@ -613,7 +613,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1Dashboard(ctx con
 // - For the `overwrite` field:
 //   - If the Dashboard already exists on the destination Workspace, set it as `true` to overwrite it.
 //   - If the Dashboard doesn't exist in there yet, you can remove this field from the body.
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1DashboardImport(ctx context.Context, request operations.PostAPIV1DashboardImportRequest) (*operations.PostAPIV1DashboardImportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1DashboardImport(ctx context.Context, request operations.PostAPIV1DashboardImportRequest) (*operations.PostAPIV1DashboardImportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dashboard/import/"
 
@@ -693,7 +693,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1DashboardImport(c
 //   - `NOT IN`
 //
 // - `{{Value}}` with the value to be applied on the filter.
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1DashboardDashboardIDPermalink(ctx context.Context, request operations.PostAPIV1DashboardDashboardIDPermalinkRequest) (*operations.PostAPIV1DashboardDashboardIDPermalinkResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1DashboardDashboardIDPermalink(ctx context.Context, request operations.PostAPIV1DashboardDashboardIDPermalinkRequest) (*operations.PostAPIV1DashboardDashboardIDPermalinkResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dashboard/{DashboardID}/permalink", request, nil)
 	if err != nil {
@@ -751,7 +751,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDashboards) PostAPIV1DashboardDashboar
 }
 
 // PutAPIV1DashboardDashboardID - Update a Dashboard
-func (s *supersetAPIsOpenSourceGreaterThanDashboards) PutAPIV1DashboardDashboardID(ctx context.Context, request operations.PutAPIV1DashboardDashboardIDRequest) (*operations.PutAPIV1DashboardDashboardIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDashboards) PutAPIV1DashboardDashboardID(ctx context.Context, request operations.PutAPIV1DashboardDashboardIDRequest) (*operations.PutAPIV1DashboardDashboardIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dashboard/{DashboardID}", request, nil)
 	if err != nil {

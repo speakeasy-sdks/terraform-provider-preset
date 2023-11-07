@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanDatasets - APIs to manage your datasets.
-type supersetAPIsOpenSourceGreaterThanDatasets struct {
+// SupersetAPIsOpenSourceGreaterThanDatasets - APIs to manage your datasets.
+type SupersetAPIsOpenSourceGreaterThanDatasets struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanDatasets(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanDatasets {
-	return &supersetAPIsOpenSourceGreaterThanDatasets{
+func newSupersetAPIsOpenSourceGreaterThanDatasets(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanDatasets {
+	return &SupersetAPIsOpenSourceGreaterThanDatasets{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -42,7 +42,7 @@ func newSupersetAPIsOpenSourceGreaterThanDatasets(sdkConfig sdkConfiguration) *s
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DatasetID}}` with the Dataset `id` retrieved from the **Get All Datasets from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) DeleteAPIV1DatasetDatasetID(ctx context.Context, request operations.DeleteAPIV1DatasetDatasetIDRequest) (*operations.DeleteAPIV1DatasetDatasetIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) DeleteAPIV1DatasetDatasetID(ctx context.Context, request operations.DeleteAPIV1DatasetDatasetIDRequest) (*operations.DeleteAPIV1DatasetDatasetIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dataset/{DatasetID}", request, nil)
 	if err != nil {
@@ -117,7 +117,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) DeleteAPIV1DatasetDatasetID(
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1Dataset(ctx context.Context, request operations.GetAPIV1DatasetRequest) (*operations.GetAPIV1DatasetResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1Dataset(ctx context.Context, request operations.GetAPIV1DatasetRequest) (*operations.GetAPIV1DatasetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dataset/"
 
@@ -181,7 +181,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1Dataset(ctx context.
 // - `{{DatasetIDs}}` with comma separated `ids` retrieved from the **Get all Datasets from a Workspace** endpoint.
 //
 // _**Tip:**_ If used in Postman, select `Save Response` and `Save to a File` to get the zip export.
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetExport(ctx context.Context, request operations.GetAPIV1DatasetExportRequest) (*operations.GetAPIV1DatasetExportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetExport(ctx context.Context, request operations.GetAPIV1DatasetExportRequest) (*operations.GetAPIV1DatasetExportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dataset/export"
 
@@ -257,7 +257,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetExport(ctx co
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetRelatedOwners(ctx context.Context, request operations.GetAPIV1DatasetRelatedOwnersRequest) (*operations.GetAPIV1DatasetRelatedOwnersResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetRelatedOwners(ctx context.Context, request operations.GetAPIV1DatasetRelatedOwnersRequest) (*operations.GetAPIV1DatasetRelatedOwnersResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dataset/related/owners"
 
@@ -319,7 +319,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetRelatedOwners
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DatasetID}}` with the Dataset `id` retrieved from the **Get All Datasets from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetDatasetID(ctx context.Context, request operations.GetAPIV1DatasetDatasetIDRequest) (*operations.GetAPIV1DatasetDatasetIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetDatasetID(ctx context.Context, request operations.GetAPIV1DatasetDatasetIDRequest) (*operations.GetAPIV1DatasetDatasetIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dataset/{DatasetID}", request, nil)
 	if err != nil {
@@ -390,7 +390,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) GetAPIV1DatasetDatasetID(ctx
 // - `{{TableName}}` with the desired table.
 // - `{{DatasetSQL}}` with the SQL query to power your dataset.
 // - `{{OwnerID}}` with the `id` for the desired owner account(s) retrieved from the **Get all possible Dataset Owners** endpoint. Use a comma to separate multiple IDs (for example, `[2,5]`).
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) PostAPIV1Dataset(ctx context.Context, request operations.PostAPIV1DatasetRequest) (*operations.PostAPIV1DatasetResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) PostAPIV1Dataset(ctx context.Context, request operations.PostAPIV1DatasetRequest) (*operations.PostAPIV1DatasetResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dataset"
 
@@ -470,7 +470,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) PostAPIV1Dataset(ctx context
 //
 // - For the `overwrite` field:
 //   - If the DB Connection already exists on the destination Workspace, set it as `true` to overwrite it.
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) PostAPIV1DatasetImport(ctx context.Context, request operations.PostAPIV1DatasetImportRequest) (*operations.PostAPIV1DatasetImportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) PostAPIV1DatasetImport(ctx context.Context, request operations.PostAPIV1DatasetImportRequest) (*operations.PostAPIV1DatasetImportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/dataset/import/"
 
@@ -550,7 +550,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) PostAPIV1DatasetImport(ctx c
 // - `{{TableName}}` with the desired table.
 // - `{{DatasetSQL}}` with the SQL query to power your dataset.
 // - `{{OwnerID}}` with the `id` for the desired owner account(s) retrieved from the **Get all possible Dataset Owners** endpoint. Use a comma to separate multiple IDs (for example, `[2,5]`).
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) PutAPIV1DatasetDatasetID(ctx context.Context, request operations.PutAPIV1DatasetDatasetIDRequest) (*operations.PutAPIV1DatasetDatasetIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) PutAPIV1DatasetDatasetID(ctx context.Context, request operations.PutAPIV1DatasetDatasetIDRequest) (*operations.PutAPIV1DatasetDatasetIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dataset/{DatasetID}", request, nil)
 	if err != nil {
@@ -625,7 +625,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatasets) PutAPIV1DatasetDatasetID(ctx
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DatasetID}}` with the Dataset `id` retrieved from the **Get All Datasets from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanDatasets) PutAPIV1DatasetDatasetIDRefresh(ctx context.Context, request operations.PutAPIV1DatasetDatasetIDRefreshRequest) (*operations.PutAPIV1DatasetDatasetIDRefreshResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatasets) PutAPIV1DatasetDatasetIDRefresh(ctx context.Context, request operations.PutAPIV1DatasetDatasetIDRefreshRequest) (*operations.PutAPIV1DatasetDatasetIDRefreshResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/dataset/{DatasetID}/refresh", request, nil)
 	if err != nil {

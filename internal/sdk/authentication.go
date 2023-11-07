@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// authentication - API to authenticate and get a JWT token to interact with the Preset/Superset APIs.
-type authentication struct {
+// Authentication - API to authenticate and get a JWT token to interact with the Preset/Superset APIs.
+type Authentication struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAuthentication(sdkConfig sdkConfiguration) *authentication {
-	return &authentication{
+func newAuthentication(sdkConfig sdkConfiguration) *Authentication {
+	return &Authentication{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -34,7 +34,7 @@ func newAuthentication(sdkConfig sdkConfiguration) *authentication {
 //
 // - `{{APIToken}}` with the `token` from the UI.
 // - `{{APISecret}}` with the `secret` from the UI.
-func (s *authentication) PostV1Auth(ctx context.Context, request operations.PostV1AuthRequest) (*operations.PostV1AuthResponse, error) {
+func (s *Authentication) PostV1Auth(ctx context.Context, request operations.PostV1AuthRequest) (*operations.PostV1AuthResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/v1/auth/"
 

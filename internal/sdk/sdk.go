@@ -141,39 +141,39 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 //
 // Use the **Get a JWT Token** request to generate a `JWT Token.`
 type Preset struct {
-	// API to authenticate and get a JWT token to interact with the Preset/Superset APIs.
-	Authentication *authentication
-	// APIs associated with the Embedded functionality.
-	PresetManagerAPIsGreaterThanEmbedded *presetManagerAPIsGreaterThanEmbedded
-	// APIs to manage permissions on the Workspace level.
-	//
-	// Note that all Permission APIs require **Team Admin** permission.
-	PresetManagerAPIsGreaterThanPermissions *presetManagerAPIsGreaterThanPermissions
-	// APIs to manage your Preset team.
-	PresetManagerAPIsGreaterThanTeams *presetManagerAPIsGreaterThanTeams
-	// APIs to manage your Workspaces.
-	PresetManagerAPIsGreaterThanWorkspaces *presetManagerAPIsGreaterThanWorkspaces
-	// APIs to manage your Alerts & Reports.
-	SupersetAPIsOpenSourceGreaterThanAlertsAndReports *supersetAPIsOpenSourceGreaterThanAlertsAndReports
 	// API to manage your Annotation Layers.
-	SupersetAPIsOpenSourceGreaterThanAnnotationLayers *supersetAPIsOpenSourceGreaterThanAnnotationLayers
+	SupersetAPIsOpenSourceGreaterThanAnnotationLayers *SupersetAPIsOpenSourceGreaterThanAnnotationLayers
 	// APIs to export/import an `assets` ZIP file from the Workspace, which includes all:
 	//
 	// *   databases.
 	// *   datasets.
 	// *   charts.
 	// *   saved queries.
-	SupersetAPIsOpenSourceGreaterThanAssets *supersetAPIsOpenSourceGreaterThanAssets
+	SupersetAPIsOpenSourceGreaterThanAssets *SupersetAPIsOpenSourceGreaterThanAssets
 	// APIs to manage Charts on your Workspace.
-	SupersetAPIsOpenSourceGreaterThanCharts *supersetAPIsOpenSourceGreaterThanCharts
+	SupersetAPIsOpenSourceGreaterThanCharts *SupersetAPIsOpenSourceGreaterThanCharts
 	// APIs to manage your Dashboards.
-	SupersetAPIsOpenSourceGreaterThanDashboards *supersetAPIsOpenSourceGreaterThanDashboards
+	SupersetAPIsOpenSourceGreaterThanDashboards *SupersetAPIsOpenSourceGreaterThanDashboards
 	// APIs to manage your database connections.
-	SupersetAPIsOpenSourceGreaterThanDatabases *supersetAPIsOpenSourceGreaterThanDatabases
+	SupersetAPIsOpenSourceGreaterThanDatabases *SupersetAPIsOpenSourceGreaterThanDatabases
 	// APIs to manage your datasets.
-	SupersetAPIsOpenSourceGreaterThanDatasets *supersetAPIsOpenSourceGreaterThanDatasets
-	SupersetAPIsOpenSourceGreaterThanQueries  *supersetAPIsOpenSourceGreaterThanQueries
-	SupersetAPIsOpenSourceGreaterThanSQLLab   *supersetAPIsOpenSourceGreaterThanSQLLab
+	SupersetAPIsOpenSourceGreaterThanDatasets *SupersetAPIsOpenSourceGreaterThanDatasets
+	SupersetAPIsOpenSourceGreaterThanQueries  *SupersetAPIsOpenSourceGreaterThanQueries
+	// APIs to manage your Alerts & Reports.
+	SupersetAPIsOpenSourceGreaterThanAlertsAndReports *SupersetAPIsOpenSourceGreaterThanAlertsAndReports
+	SupersetAPIsOpenSourceGreaterThanSQLLab           *SupersetAPIsOpenSourceGreaterThanSQLLab
+	// APIs associated with the Embedded functionality.
+	PresetManagerAPIsGreaterThanEmbedded *PresetManagerAPIsGreaterThanEmbedded
+	// API to authenticate and get a JWT token to interact with the Preset/Superset APIs.
+	Authentication *Authentication
+	// APIs to manage your Preset team.
+	PresetManagerAPIsGreaterThanTeams *PresetManagerAPIsGreaterThanTeams
+	// APIs to manage permissions on the Workspace level.
+	//
+	// Note that all Permission APIs require **Team Admin** permission.
+	PresetManagerAPIsGreaterThanPermissions *PresetManagerAPIsGreaterThanPermissions
+	// APIs to manage your Workspaces.
+	PresetManagerAPIsGreaterThanWorkspaces *PresetManagerAPIsGreaterThanWorkspaces
 
 	sdkConfiguration sdkConfiguration
 }
@@ -250,9 +250,9 @@ func New(opts ...SDKOption) *Preset {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.10.0",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.10.0 2.173.0 1.0.0 Preset",
+			SDKVersion:        "0.11.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.11.0 2.181.1 1.0.0 Preset",
 		},
 	}
 	for _, opt := range opts {
@@ -271,18 +271,6 @@ func New(opts ...SDKOption) *Preset {
 		}
 	}
 
-	sdk.Authentication = newAuthentication(sdk.sdkConfiguration)
-
-	sdk.PresetManagerAPIsGreaterThanEmbedded = newPresetManagerAPIsGreaterThanEmbedded(sdk.sdkConfiguration)
-
-	sdk.PresetManagerAPIsGreaterThanPermissions = newPresetManagerAPIsGreaterThanPermissions(sdk.sdkConfiguration)
-
-	sdk.PresetManagerAPIsGreaterThanTeams = newPresetManagerAPIsGreaterThanTeams(sdk.sdkConfiguration)
-
-	sdk.PresetManagerAPIsGreaterThanWorkspaces = newPresetManagerAPIsGreaterThanWorkspaces(sdk.sdkConfiguration)
-
-	sdk.SupersetAPIsOpenSourceGreaterThanAlertsAndReports = newSupersetAPIsOpenSourceGreaterThanAlertsAndReports(sdk.sdkConfiguration)
-
 	sdk.SupersetAPIsOpenSourceGreaterThanAnnotationLayers = newSupersetAPIsOpenSourceGreaterThanAnnotationLayers(sdk.sdkConfiguration)
 
 	sdk.SupersetAPIsOpenSourceGreaterThanAssets = newSupersetAPIsOpenSourceGreaterThanAssets(sdk.sdkConfiguration)
@@ -297,7 +285,19 @@ func New(opts ...SDKOption) *Preset {
 
 	sdk.SupersetAPIsOpenSourceGreaterThanQueries = newSupersetAPIsOpenSourceGreaterThanQueries(sdk.sdkConfiguration)
 
+	sdk.SupersetAPIsOpenSourceGreaterThanAlertsAndReports = newSupersetAPIsOpenSourceGreaterThanAlertsAndReports(sdk.sdkConfiguration)
+
 	sdk.SupersetAPIsOpenSourceGreaterThanSQLLab = newSupersetAPIsOpenSourceGreaterThanSQLLab(sdk.sdkConfiguration)
+
+	sdk.PresetManagerAPIsGreaterThanEmbedded = newPresetManagerAPIsGreaterThanEmbedded(sdk.sdkConfiguration)
+
+	sdk.Authentication = newAuthentication(sdk.sdkConfiguration)
+
+	sdk.PresetManagerAPIsGreaterThanTeams = newPresetManagerAPIsGreaterThanTeams(sdk.sdkConfiguration)
+
+	sdk.PresetManagerAPIsGreaterThanPermissions = newPresetManagerAPIsGreaterThanPermissions(sdk.sdkConfiguration)
+
+	sdk.PresetManagerAPIsGreaterThanWorkspaces = newPresetManagerAPIsGreaterThanWorkspaces(sdk.sdkConfiguration)
 
 	return sdk
 }

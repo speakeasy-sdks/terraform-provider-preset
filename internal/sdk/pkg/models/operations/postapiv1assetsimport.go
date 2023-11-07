@@ -6,31 +6,31 @@ import (
 	"net/http"
 )
 
-type PostAPIV1AssetsImportRequestBodyBundle struct {
-	Bundle  string `multipartForm:"name=bundle"`
-	Content []byte `multipartForm:"content"`
+type Bundle struct {
+	Content  []byte `multipartForm:"content"`
+	FileName string `multipartForm:"name=bundle"`
 }
 
-func (o *PostAPIV1AssetsImportRequestBodyBundle) GetBundle() string {
-	if o == nil {
-		return ""
-	}
-	return o.Bundle
-}
-
-func (o *PostAPIV1AssetsImportRequestBodyBundle) GetContent() []byte {
+func (o *Bundle) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-type PostAPIV1AssetsImportRequestBody struct {
-	Bundle    *PostAPIV1AssetsImportRequestBodyBundle `multipartForm:"file"`
-	Passwords *string                                 `multipartForm:"name=passwords"`
+func (o *Bundle) GetFileName() string {
+	if o == nil {
+		return ""
+	}
+	return o.FileName
 }
 
-func (o *PostAPIV1AssetsImportRequestBody) GetBundle() *PostAPIV1AssetsImportRequestBodyBundle {
+type PostAPIV1AssetsImportRequestBody struct {
+	Bundle    *Bundle `multipartForm:"file"`
+	Passwords *string `multipartForm:"name=passwords"`
+}
+
+func (o *PostAPIV1AssetsImportRequestBody) GetBundle() *Bundle {
 	if o == nil {
 		return nil
 	}

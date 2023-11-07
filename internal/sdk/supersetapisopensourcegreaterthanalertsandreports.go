@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanAlertsAndReports - APIs to manage your Alerts & Reports.
-type supersetAPIsOpenSourceGreaterThanAlertsAndReports struct {
+// SupersetAPIsOpenSourceGreaterThanAlertsAndReports - APIs to manage your Alerts & Reports.
+type SupersetAPIsOpenSourceGreaterThanAlertsAndReports struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanAlertsAndReports(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanAlertsAndReports {
-	return &supersetAPIsOpenSourceGreaterThanAlertsAndReports{
+func newSupersetAPIsOpenSourceGreaterThanAlertsAndReports(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanAlertsAndReports {
+	return &SupersetAPIsOpenSourceGreaterThanAlertsAndReports{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -47,7 +47,7 @@ func newSupersetAPIsOpenSourceGreaterThanAlertsAndReports(sdkConfig sdkConfigura
 // ?q=(filters:!((col:type,opr:eq,value:Report)),page_size:{{PageSize}},page:{{Page}})
 //
 // ```
-func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1Report(ctx context.Context, request operations.GetAPIV1ReportRequest) (*operations.GetAPIV1ReportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1Report(ctx context.Context, request operations.GetAPIV1ReportRequest) (*operations.GetAPIV1ReportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/report/"
 
@@ -111,7 +111,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1Report(ctx c
 // | ap-northeast-1 | `ap1a` |
 //
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
-func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1ReportInfo(ctx context.Context, request operations.GetAPIV1ReportInfoRequest) (*operations.GetAPIV1ReportInfoResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1ReportInfo(ctx context.Context, request operations.GetAPIV1ReportInfoRequest) (*operations.GetAPIV1ReportInfoResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/report/_info"
 
@@ -176,7 +176,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1ReportInfo(c
 //   - **Get all Alerts and Reports from a Workspace**
 //   - **Get all Alerts from a Workspace**
 //   - **Get all Reports from a Workspace**
-func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1ReportAlertIDORReportID(ctx context.Context, request operations.GetAPIV1ReportAlertIDORReportIDRequest) (*operations.GetAPIV1ReportAlertIDORReportIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1ReportAlertIDORReportID(ctx context.Context, request operations.GetAPIV1ReportAlertIDORReportIDRequest) (*operations.GetAPIV1ReportAlertIDORReportIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/report/{AlertID OR ReportID}"
 
@@ -286,7 +286,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) GetAPIV1ReportAlertI
 // - `{{LogRetention}}` with the retention period (in days). Default and max value is `90`_._
 // - `{{WorkingTimeout}}` with time out settings (in seconds). Default value is `3600`.
 // - `{{GracePeriod}}` with a grace period (in seconds). Default value is `14400`.
-func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) PostAPIV1Report(ctx context.Context, request operations.PostAPIV1ReportRequest) (*operations.PostAPIV1ReportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAlertsAndReports) PostAPIV1Report(ctx context.Context, request operations.PostAPIV1ReportRequest) (*operations.PostAPIV1ReportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/report/"
 
@@ -361,7 +361,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) PostAPIV1Report(ctx 
 //   - **Get all Alerts and Reports from a Workspace**
 //   - **Get all Alerts from a Workspace**
 //   - **Get all Reports from a Workspace**
-func (s *supersetAPIsOpenSourceGreaterThanAlertsAndReports) PutAPIV1ReportAlertIDORReportID(ctx context.Context, request operations.PutAPIV1ReportAlertIDORReportIDRequest) (*operations.PutAPIV1ReportAlertIDORReportIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAlertsAndReports) PutAPIV1ReportAlertIDORReportID(ctx context.Context, request operations.PutAPIV1ReportAlertIDORReportIDRequest) (*operations.PutAPIV1ReportAlertIDORReportIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/report/{AlertID OR ReportID}"
 

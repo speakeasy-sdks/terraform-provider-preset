@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// presetManagerAPIsGreaterThanTeams - APIs to manage your Preset team.
-type presetManagerAPIsGreaterThanTeams struct {
+// PresetManagerAPIsGreaterThanTeams - APIs to manage your Preset team.
+type PresetManagerAPIsGreaterThanTeams struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPresetManagerAPIsGreaterThanTeams(sdkConfig sdkConfiguration) *presetManagerAPIsGreaterThanTeams {
-	return &presetManagerAPIsGreaterThanTeams{
+func newPresetManagerAPIsGreaterThanTeams(sdkConfig sdkConfiguration) *PresetManagerAPIsGreaterThanTeams {
+	return &PresetManagerAPIsGreaterThanTeams{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -34,7 +34,7 @@ func newPresetManagerAPIsGreaterThanTeams(sdkConfig sdkConfiguration) *presetMan
 // *   `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
 //
 // *   `{{InviteID}}`with the `id` retrieved through the API using the **Get Pending Team Invites** endpoint.
-func (s *presetManagerAPIsGreaterThanTeams) DeleteV1TeamsTeamSlugInvitesInviteID(ctx context.Context, request operations.DeleteV1TeamsTeamSlugInvitesInviteIDRequest) (*operations.DeleteV1TeamsTeamSlugInvitesInviteIDResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) DeleteV1TeamsTeamSlugInvitesInviteID(ctx context.Context, request operations.DeleteV1TeamsTeamSlugInvitesInviteIDRequest) (*operations.DeleteV1TeamsTeamSlugInvitesInviteIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/invites/{InviteID}", request, nil)
 	if err != nil {
@@ -90,7 +90,7 @@ func (s *presetManagerAPIsGreaterThanTeams) DeleteV1TeamsTeamSlugInvitesInviteID
 //
 // - `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
 // - `{{UserID}}`with the `id` retrieved using the **Get Team Members** endpoint.
-func (s *presetManagerAPIsGreaterThanTeams) DeleteV1TeamsTeamSlugMembershipsUserID(ctx context.Context, request operations.DeleteV1TeamsTeamSlugMembershipsUserIDRequest) (*operations.DeleteV1TeamsTeamSlugMembershipsUserIDResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) DeleteV1TeamsTeamSlugMembershipsUserID(ctx context.Context, request operations.DeleteV1TeamsTeamSlugMembershipsUserIDRequest) (*operations.DeleteV1TeamsTeamSlugMembershipsUserIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/memberships/{UserID}", request, nil)
 	if err != nil {
@@ -139,7 +139,7 @@ func (s *presetManagerAPIsGreaterThanTeams) DeleteV1TeamsTeamSlugMembershipsUser
 
 // GetV1Teams - Get Preset Teams
 // Retrieves all Preset teams the user has access to.
-func (s *presetManagerAPIsGreaterThanTeams) GetV1Teams(ctx context.Context, request operations.GetV1TeamsRequest) (*operations.GetV1TeamsResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) GetV1Teams(ctx context.Context, request operations.GetV1TeamsRequest) (*operations.GetV1TeamsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/v1/teams/"
 
@@ -191,7 +191,7 @@ func (s *presetManagerAPIsGreaterThanTeams) GetV1Teams(ctx context.Context, requ
 // Replace in the URL:
 //
 // *   `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
-func (s *presetManagerAPIsGreaterThanTeams) GetV1TeamsTeamSlugInvites(ctx context.Context, request operations.GetV1TeamsTeamSlugInvitesRequest) (*operations.GetV1TeamsTeamSlugInvitesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) GetV1TeamsTeamSlugInvites(ctx context.Context, request operations.GetV1TeamsTeamSlugInvitesRequest) (*operations.GetV1TeamsTeamSlugInvitesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/invites", request, nil)
 	if err != nil {
@@ -246,7 +246,7 @@ func (s *presetManagerAPIsGreaterThanTeams) GetV1TeamsTeamSlugInvites(ctx contex
 // Replace in the URL:
 //
 // - `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
-func (s *presetManagerAPIsGreaterThanTeams) GetV1TeamsTeamSlugMemberships(ctx context.Context, request operations.GetV1TeamsTeamSlugMembershipsRequest) (*operations.GetV1TeamsTeamSlugMembershipsResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) GetV1TeamsTeamSlugMemberships(ctx context.Context, request operations.GetV1TeamsTeamSlugMembershipsRequest) (*operations.GetV1TeamsTeamSlugMembershipsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/memberships", request, nil)
 	if err != nil {
@@ -308,7 +308,7 @@ func (s *presetManagerAPIsGreaterThanTeams) GetV1TeamsTeamSlugMemberships(ctx co
 // - `{{RoleID}}` with the desired role:
 //   - Use **`2`** for **User**.
 //   - Use **`1`** for **Admin**.
-func (s *presetManagerAPIsGreaterThanTeams) PatchV1TeamsTeamSlugMembershipsUserID(ctx context.Context, request operations.PatchV1TeamsTeamSlugMembershipsUserIDRequest) (*operations.PatchV1TeamsTeamSlugMembershipsUserIDResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) PatchV1TeamsTeamSlugMembershipsUserID(ctx context.Context, request operations.PatchV1TeamsTeamSlugMembershipsUserIDRequest) (*operations.PatchV1TeamsTeamSlugMembershipsUserIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/memberships/{UserID}", request, nil)
 	if err != nil {
@@ -381,7 +381,7 @@ func (s *presetManagerAPIsGreaterThanTeams) PatchV1TeamsTeamSlugMembershipsUserI
 //   - Use **`1`** for **Admin**.
 //
 // *   `{{Email}}` with the user's email address.
-func (s *presetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvites(ctx context.Context, request operations.PostV1TeamsTeamSlugInvitesRequest) (*operations.PostV1TeamsTeamSlugInvitesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvites(ctx context.Context, request operations.PostV1TeamsTeamSlugInvitesRequest) (*operations.PostV1TeamsTeamSlugInvitesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/invites", request, nil)
 	if err != nil {
@@ -454,7 +454,7 @@ func (s *presetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvites(ctx conte
 //   - Use **`1`** for **Admin**.
 //
 // *   `{{Email}}, {{Email2}}...` with the users' email addresses.
-func (s *presetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvitesMany(ctx context.Context, request operations.PostV1TeamsTeamSlugInvitesManyRequest) (*operations.PostV1TeamsTeamSlugInvitesManyResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvitesMany(ctx context.Context, request operations.PostV1TeamsTeamSlugInvitesManyRequest) (*operations.PostV1TeamsTeamSlugInvitesManyResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/invites/many", request, nil)
 	if err != nil {
@@ -519,7 +519,7 @@ func (s *presetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvitesMany(ctx c
 // *   `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`
 //
 // *   `{{InviteID}}`with the `id` retrieved through the API using the **Get Pending Team Invites** endpoint.
-func (s *presetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvitesResendInviteID(ctx context.Context, request operations.PostV1TeamsTeamSlugInvitesResendInviteIDRequest) (*operations.PostV1TeamsTeamSlugInvitesResendInviteIDResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvitesResendInviteID(ctx context.Context, request operations.PostV1TeamsTeamSlugInvitesResendInviteIDRequest) (*operations.PostV1TeamsTeamSlugInvitesResendInviteIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/invites/resend/{InviteID}", request, nil)
 	if err != nil {
@@ -578,7 +578,7 @@ func (s *presetManagerAPIsGreaterThanTeams) PostV1TeamsTeamSlugInvitesResendInvi
 // Replace in the Body:
 //
 // - `{{NewTeamTitle}}` by the new title you want to set.
-func (s *presetManagerAPIsGreaterThanTeams) PutV1TeamsTeamSlug(ctx context.Context, request operations.PutV1TeamsTeamSlugRequest) (*operations.PutV1TeamsTeamSlugResponse, error) {
+func (s *PresetManagerAPIsGreaterThanTeams) PutV1TeamsTeamSlug(ctx context.Context, request operations.PutV1TeamsTeamSlugRequest) (*operations.PutV1TeamsTeamSlugResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}", request, nil)
 	if err != nil {

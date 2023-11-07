@@ -13,12 +13,12 @@ import (
 	"strings"
 )
 
-type supersetAPIsOpenSourceGreaterThanSQLLab struct {
+type SupersetAPIsOpenSourceGreaterThanSQLLab struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanSQLLab(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanSQLLab {
-	return &supersetAPIsOpenSourceGreaterThanSQLLab{
+func newSupersetAPIsOpenSourceGreaterThanSQLLab(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanSQLLab {
+	return &SupersetAPIsOpenSourceGreaterThanSQLLab{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -53,7 +53,7 @@ func newSupersetAPIsOpenSourceGreaterThanSQLLab(sdkConfig sdkConfiguration) *sup
 //	  }
 //
 // ```
-func (s *supersetAPIsOpenSourceGreaterThanSQLLab) PostAPIV1SqllabExecute(ctx context.Context, request operations.PostAPIV1SqllabExecuteRequest) (*operations.PostAPIV1SqllabExecuteResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanSQLLab) PostAPIV1SqllabExecute(ctx context.Context, request operations.PostAPIV1SqllabExecuteRequest) (*operations.PostAPIV1SqllabExecuteResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/sqllab/execute/"
 

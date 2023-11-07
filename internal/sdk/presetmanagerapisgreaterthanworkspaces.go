@@ -12,13 +12,13 @@ import (
 	"net/http"
 )
 
-// presetManagerAPIsGreaterThanWorkspaces - APIs to manage your Workspaces.
-type presetManagerAPIsGreaterThanWorkspaces struct {
+// PresetManagerAPIsGreaterThanWorkspaces - APIs to manage your Workspaces.
+type PresetManagerAPIsGreaterThanWorkspaces struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPresetManagerAPIsGreaterThanWorkspaces(sdkConfig sdkConfiguration) *presetManagerAPIsGreaterThanWorkspaces {
-	return &presetManagerAPIsGreaterThanWorkspaces{
+func newPresetManagerAPIsGreaterThanWorkspaces(sdkConfig sdkConfiguration) *PresetManagerAPIsGreaterThanWorkspaces {
+	return &PresetManagerAPIsGreaterThanWorkspaces{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -29,7 +29,7 @@ func newPresetManagerAPIsGreaterThanWorkspaces(sdkConfig sdkConfiguration) *pres
 // Replace in the URL:
 //
 // *   `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
-func (s *presetManagerAPIsGreaterThanWorkspaces) GetV1TeamsTeamSlugWorkspaces(ctx context.Context, request operations.GetV1TeamsTeamSlugWorkspacesRequest) (*operations.GetV1TeamsTeamSlugWorkspacesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanWorkspaces) GetV1TeamsTeamSlugWorkspaces(ctx context.Context, request operations.GetV1TeamsTeamSlugWorkspacesRequest) (*operations.GetV1TeamsTeamSlugWorkspacesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/workspaces", request, nil)
 	if err != nil {
@@ -84,7 +84,7 @@ func (s *presetManagerAPIsGreaterThanWorkspaces) GetV1TeamsTeamSlugWorkspaces(ct
 // *   `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
 //
 // *   `{{WorkspaceID}}` with the `id` retrieved through the API with the **Get Workspaces from a Team** endpoint.
-func (s *presetManagerAPIsGreaterThanWorkspaces) GetV1TeamsTeamSlugWorkspacesWorkspaceIDMemberships(ctx context.Context, request operations.GetV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipsRequest) (*operations.GetV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipsResponse, error) {
+func (s *PresetManagerAPIsGreaterThanWorkspaces) GetV1TeamsTeamSlugWorkspacesWorkspaceIDMemberships(ctx context.Context, request operations.GetV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipsRequest) (*operations.GetV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/workspaces/{WorkspaceID}/memberships", request, nil)
 	if err != nil {
@@ -151,7 +151,7 @@ func (s *presetManagerAPIsGreaterThanWorkspaces) GetV1TeamsTeamSlugWorkspacesWor
 // | **US West Coast** | `us-west-2` |
 // | **Europe** | `eu-north-1` |
 // | **Asia-Pacific** | `ap-northeast-1` |
-func (s *presetManagerAPIsGreaterThanWorkspaces) PostV1TeamsTeamSlugWorkspaces(ctx context.Context, request operations.PostV1TeamsTeamSlugWorkspacesRequest) (*operations.PostV1TeamsTeamSlugWorkspacesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanWorkspaces) PostV1TeamsTeamSlugWorkspaces(ctx context.Context, request operations.PostV1TeamsTeamSlugWorkspacesRequest) (*operations.PostV1TeamsTeamSlugWorkspacesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/workspaces", request, nil)
 	if err != nil {
@@ -234,7 +234,7 @@ func (s *presetManagerAPIsGreaterThanWorkspaces) PostV1TeamsTeamSlugWorkspaces(c
 // | No Access | "PresetNoAccess" |
 //
 // Each Role Identifier corresponds to a specific Workspace Role. As a reminder, the access restrictions for each Workspace Role can be found [in our documentation](https://docs.preset.io/docs/data-access-roles-at-preset).
-func (s *presetManagerAPIsGreaterThanWorkspaces) PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembership(ctx context.Context, request operations.PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequest) (*operations.PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse, error) {
+func (s *PresetManagerAPIsGreaterThanWorkspaces) PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembership(ctx context.Context, request operations.PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipRequest) (*operations.PutV1TeamsTeamSlugWorkspacesWorkspaceIDMembershipResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/workspaces/{WorkspaceID}/membership", request, nil)
 	if err != nil {

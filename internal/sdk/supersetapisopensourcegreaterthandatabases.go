@@ -13,13 +13,13 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanDatabases - APIs to manage your database connections.
-type supersetAPIsOpenSourceGreaterThanDatabases struct {
+// SupersetAPIsOpenSourceGreaterThanDatabases - APIs to manage your database connections.
+type SupersetAPIsOpenSourceGreaterThanDatabases struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanDatabases(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanDatabases {
-	return &supersetAPIsOpenSourceGreaterThanDatabases{
+func newSupersetAPIsOpenSourceGreaterThanDatabases(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanDatabases {
+	return &SupersetAPIsOpenSourceGreaterThanDatabases{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -58,7 +58,7 @@ func newSupersetAPIsOpenSourceGreaterThanDatabases(sdkConfig sdkConfiguration) *
 // ```
 //
 // **Note:** You need to escape quotes (`"`) and other special characters using `\` on all body fields.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) CreateDatabaseUsingSSH(ctx context.Context, request operations.CreateDatabaseUsingSSHRequest) (*operations.CreateDatabaseUsingSSHResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) CreateDatabaseUsingSSH(ctx context.Context, request operations.CreateDatabaseUsingSSHRequest) (*operations.CreateDatabaseUsingSSHResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/database/"
 
@@ -140,7 +140,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) CreateDatabaseUsingSSH(ctx 
 //
 // - `{{PageSize}}` with the desired size (min `1` max `100`).
 // - `{{Page}}` with the page number (useful when the total count > `{{PageSize}}` - min `0`).
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1Database(ctx context.Context, request operations.GetAPIV1DatabaseRequest) (*operations.GetAPIV1DatabaseResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1Database(ctx context.Context, request operations.GetAPIV1DatabaseRequest) (*operations.GetAPIV1DatabaseResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/database"
 
@@ -204,7 +204,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1Database(ctx contex
 // *   `{{DatabaseIDs}` with comma separated DB `ids` retrieved from the **Get all Database Connections from a Workspace** endpoint.
 //
 // ***Tip:*** If used in Postman, select `Save Response` and `Save to a File` to get the zip export.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseExport(ctx context.Context, request operations.GetAPIV1DatabaseExportRequest) (*operations.GetAPIV1DatabaseExportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseExport(ctx context.Context, request operations.GetAPIV1DatabaseExportRequest) (*operations.GetAPIV1DatabaseExportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/database/export"
 
@@ -270,7 +270,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseExport(ctx 
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DatabaseID}}` with the Database Connection `id` retrieved from the **Get All Database Connections from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseDatabaseID(ctx context.Context, request operations.GetAPIV1DatabaseDatabaseIDRequest) (*operations.GetAPIV1DatabaseDatabaseIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseDatabaseID(ctx context.Context, request operations.GetAPIV1DatabaseDatabaseIDRequest) (*operations.GetAPIV1DatabaseDatabaseIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/database/{DatabaseID}", request, nil)
 	if err != nil {
@@ -337,7 +337,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseDatabaseID(
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // - `{{DatabaseID}}` with the Database Connection `id` retrieved from the **Get All Database Connections from a Workspace** endpoint.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseDatabaseIDConnection(ctx context.Context, request operations.GetAPIV1DatabaseDatabaseIDConnectionRequest) (*operations.GetAPIV1DatabaseDatabaseIDConnectionResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseDatabaseIDConnection(ctx context.Context, request operations.GetAPIV1DatabaseDatabaseIDConnectionRequest) (*operations.GetAPIV1DatabaseDatabaseIDConnectionResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/database/{DatabaseID}/connection", request, nil)
 	if err != nil {
@@ -414,7 +414,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) GetAPIV1DatabaseDatabaseIDC
 // ```
 //
 // **Note:** You need to escape quotes (`"`) and other special characters using `\` on all body fields.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) PostAPIV1Database(ctx context.Context, request operations.PostAPIV1DatabaseRequest) (*operations.PostAPIV1DatabaseResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) PostAPIV1Database(ctx context.Context, request operations.PostAPIV1DatabaseRequest) (*operations.PostAPIV1DatabaseResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/database"
 
@@ -494,7 +494,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) PostAPIV1Database(ctx conte
 //
 // - For the `overwrite` field:
 //   - If the DB Connection already exists on the destination Workspace, set it as `true` to overwrite it.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) PostAPIV1DatabaseImport(ctx context.Context, request operations.PostAPIV1DatabaseImportRequest) (*operations.PostAPIV1DatabaseImportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) PostAPIV1DatabaseImport(ctx context.Context, request operations.PostAPIV1DatabaseImportRequest) (*operations.PostAPIV1DatabaseImportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/database/import/"
 
@@ -571,7 +571,7 @@ func (s *supersetAPIsOpenSourceGreaterThanDatabases) PostAPIV1DatabaseImport(ctx
 // In the body:
 //
 // Include the keys you would like to update. Refer to the **Create a Database Connection** payload to check supported values.
-func (s *supersetAPIsOpenSourceGreaterThanDatabases) PutAPIV1DatabaseDatabaseID(ctx context.Context, request operations.PutAPIV1DatabaseDatabaseIDRequest) (*operations.PutAPIV1DatabaseDatabaseIDResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanDatabases) PutAPIV1DatabaseDatabaseID(ctx context.Context, request operations.PutAPIV1DatabaseDatabaseIDRequest) (*operations.PutAPIV1DatabaseDatabaseIDResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/database/{DatabaseID}", request, nil)
 	if err != nil {

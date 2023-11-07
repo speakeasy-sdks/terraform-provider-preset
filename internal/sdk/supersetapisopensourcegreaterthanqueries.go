@@ -13,18 +13,18 @@ import (
 	"strings"
 )
 
-type supersetAPIsOpenSourceGreaterThanQueries struct {
+type SupersetAPIsOpenSourceGreaterThanQueries struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanQueries(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanQueries {
-	return &supersetAPIsOpenSourceGreaterThanQueries{
+func newSupersetAPIsOpenSourceGreaterThanQueries(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanQueries {
+	return &SupersetAPIsOpenSourceGreaterThanQueries{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetAPIV1Query - Get All Workspace Queries
-func (s *supersetAPIsOpenSourceGreaterThanQueries) GetAPIV1Query(ctx context.Context) (*operations.GetAPIV1QueryResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanQueries) GetAPIV1Query(ctx context.Context) (*operations.GetAPIV1QueryResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/query/"
 

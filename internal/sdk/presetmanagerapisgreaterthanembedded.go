@@ -12,13 +12,13 @@ import (
 	"net/http"
 )
 
-// presetManagerAPIsGreaterThanEmbedded - APIs associated with the Embedded functionality.
-type presetManagerAPIsGreaterThanEmbedded struct {
+// PresetManagerAPIsGreaterThanEmbedded - APIs associated with the Embedded functionality.
+type PresetManagerAPIsGreaterThanEmbedded struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPresetManagerAPIsGreaterThanEmbedded(sdkConfig sdkConfiguration) *presetManagerAPIsGreaterThanEmbedded {
-	return &presetManagerAPIsGreaterThanEmbedded{
+func newPresetManagerAPIsGreaterThanEmbedded(sdkConfig sdkConfiguration) *PresetManagerAPIsGreaterThanEmbedded {
+	return &PresetManagerAPIsGreaterThanEmbedded{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -32,7 +32,7 @@ func newPresetManagerAPIsGreaterThanEmbedded(sdkConfig sdkConfiguration) *preset
 // - `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
 //
 // For instructions on how to populate the body, refer to [our documentation](https://preset-io.github.io/embedded-beta-docs/v1).
-func (s *presetManagerAPIsGreaterThanEmbedded) PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestToken(ctx context.Context, request operations.PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequest) (*operations.PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse, error) {
+func (s *PresetManagerAPIsGreaterThanEmbedded) PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestToken(ctx context.Context, request operations.PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenRequest) (*operations.PostAPIV1TeamsTeamSlugWorkspacesWorkspaceSlugGuestTokenResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/v1/teams/{TeamSlug}/workspaces/{WorkspaceSlug}/guest-token/", request, nil)
 	if err != nil {

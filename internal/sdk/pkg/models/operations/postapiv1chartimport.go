@@ -6,32 +6,32 @@ import (
 	"net/http"
 )
 
-type PostAPIV1ChartImportRequestBodyFormData struct {
+type FormData struct {
 	Content  []byte `multipartForm:"content"`
-	FormData string `multipartForm:"name=formData"`
+	FileName string `multipartForm:"name=formData"`
 }
 
-func (o *PostAPIV1ChartImportRequestBodyFormData) GetContent() []byte {
+func (o *FormData) GetContent() []byte {
 	if o == nil {
 		return []byte{}
 	}
 	return o.Content
 }
 
-func (o *PostAPIV1ChartImportRequestBodyFormData) GetFormData() string {
+func (o *FormData) GetFileName() string {
 	if o == nil {
 		return ""
 	}
-	return o.FormData
+	return o.FileName
 }
 
 type PostAPIV1ChartImportRequestBody struct {
-	FormData  *PostAPIV1ChartImportRequestBodyFormData `multipartForm:"file"`
-	Overwrite *bool                                    `multipartForm:"name=overwrite"`
-	Passwords *string                                  `multipartForm:"name=passwords"`
+	FormData  *FormData `multipartForm:"file"`
+	Overwrite *bool     `multipartForm:"name=overwrite"`
+	Passwords *string   `multipartForm:"name=passwords"`
 }
 
-func (o *PostAPIV1ChartImportRequestBody) GetFormData() *PostAPIV1ChartImportRequestBodyFormData {
+func (o *PostAPIV1ChartImportRequestBody) GetFormData() *FormData {
 	if o == nil {
 		return nil
 	}

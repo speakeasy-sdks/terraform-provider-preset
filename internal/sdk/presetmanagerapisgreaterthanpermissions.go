@@ -12,15 +12,15 @@ import (
 	"net/http"
 )
 
-// presetManagerAPIsGreaterThanPermissions - APIs to manage permissions on the Workspace level.
+// PresetManagerAPIsGreaterThanPermissions - APIs to manage permissions on the Workspace level.
 //
 // Note that all Permission APIs require **Team Admin** permission.
-type presetManagerAPIsGreaterThanPermissions struct {
+type PresetManagerAPIsGreaterThanPermissions struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newPresetManagerAPIsGreaterThanPermissions(sdkConfig sdkConfiguration) *presetManagerAPIsGreaterThanPermissions {
-	return &presetManagerAPIsGreaterThanPermissions{
+func newPresetManagerAPIsGreaterThanPermissions(sdkConfig sdkConfiguration) *PresetManagerAPIsGreaterThanPermissions {
+	return &PresetManagerAPIsGreaterThanPermissions{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -34,7 +34,7 @@ func newPresetManagerAPIsGreaterThanPermissions(sdkConfig sdkConfiguration) *pre
 //
 // - `{{TeamSlug}}` with the `name` retrieved through the API (using the **Get Preset Teams** endpoint). Alternatively, access the team administration through the UI, and get the `{{TeamSlug}}` from the URL -> `https://manage.app.preset.io/app/teams/{{TeamSlug}}/members`.
 // - `{{PermissionName}}` with the `name` retrieved via the **Get Permissions** API.
-func (s *presetManagerAPIsGreaterThanPermissions) DeleteV1TeamsTeamSlugPermissionsPermissionName(ctx context.Context, request operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameRequest) (*operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) DeleteV1TeamsTeamSlugPermissionsPermissionName(ctx context.Context, request operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameRequest) (*operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions/{PermissionName}", request, nil)
 	if err != nil {
@@ -100,7 +100,7 @@ func (s *presetManagerAPIsGreaterThanPermissions) DeleteV1TeamsTeamSlugPermissio
 // - `{{GranteeIdentifier}}` with:
 //   - `username` when adding users to DAR. You can get a list of `usernames` with the **Get Team Members** API.
 //   - `DAR Name` when adding DAR to RLS. You can get a list of availabe DARs using the **Get Permissions** endpoint. Note that you would use the **display name** (without `dar:`).
-func (s *presetManagerAPIsGreaterThanPermissions) DeleteV1TeamsTeamSlugPermissionsPermissionNameGrantees(ctx context.Context, request operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) (*operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) DeleteV1TeamsTeamSlugPermissionsPermissionNameGrantees(ctx context.Context, request operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) (*operations.DeleteV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions/{PermissionName}/grantees", request, nil)
 	if err != nil {
@@ -161,7 +161,7 @@ func (s *presetManagerAPIsGreaterThanPermissions) DeleteV1TeamsTeamSlugPermissio
 // - `workspace_name` can be used to filter for permissions only applied to a particular Workspace.
 // - `permission_type` can be used to filter for only `data_access_role`, or `row_level_security`.
 // - `grantee_identifier` can be used to filter for all permissions included in a DAR (`dar:{{DAR NAME}}`), or all permissions applied to a user (`username`).
-func (s *presetManagerAPIsGreaterThanPermissions) GetV1TeamsTeamSlugPermissions(ctx context.Context, request operations.GetV1TeamsTeamSlugPermissionsRequest) (*operations.GetV1TeamsTeamSlugPermissionsResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) GetV1TeamsTeamSlugPermissions(ctx context.Context, request operations.GetV1TeamsTeamSlugPermissionsRequest) (*operations.GetV1TeamsTeamSlugPermissionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions", request, nil)
 	if err != nil {
@@ -227,7 +227,7 @@ func (s *presetManagerAPIsGreaterThanPermissions) GetV1TeamsTeamSlugPermissions(
 //   - `dataset` to list datasets
 //   - `data_access_role` to list DARs
 //   - `row_level_security` to list RLSs
-func (s *presetManagerAPIsGreaterThanPermissions) GetV1TeamsTeamSlugPermissionsResources(ctx context.Context, request operations.GetV1TeamsTeamSlugPermissionsResourcesRequest) (*operations.GetV1TeamsTeamSlugPermissionsResourcesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) GetV1TeamsTeamSlugPermissionsResources(ctx context.Context, request operations.GetV1TeamsTeamSlugPermissionsResourcesRequest) (*operations.GetV1TeamsTeamSlugPermissionsResourcesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions/resources", request, nil)
 	if err != nil {
@@ -299,7 +299,7 @@ func (s *presetManagerAPIsGreaterThanPermissions) GetV1TeamsTeamSlugPermissionsR
 // _Please note:_
 //
 // - _**Grantee list for RLS permissions create/update is limited to 100 users in total (API will respond with 400 if over the limit)**_
-func (s *presetManagerAPIsGreaterThanPermissions) PatchV1TeamsTeamSlugPermissionsPermissionName(ctx context.Context, request operations.PatchV1TeamsTeamSlugPermissionsPermissionNameRequest) (*operations.PatchV1TeamsTeamSlugPermissionsPermissionNameResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) PatchV1TeamsTeamSlugPermissionsPermissionName(ctx context.Context, request operations.PatchV1TeamsTeamSlugPermissionsPermissionNameRequest) (*operations.PatchV1TeamsTeamSlugPermissionsPermissionNameResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions/{PermissionName}", request, nil)
 	if err != nil {
@@ -378,7 +378,7 @@ func (s *presetManagerAPIsGreaterThanPermissions) PatchV1TeamsTeamSlugPermission
 // Please note:
 //
 // - _**Grantee list for RLS permissions create/update is limited to 100 users in total (API will respond with 400 if over the limit)**_
-func (s *presetManagerAPIsGreaterThanPermissions) PostV1TeamsTeamSlugPermissions(ctx context.Context, request operations.PostV1TeamsTeamSlugPermissionsRequest) (*operations.PostV1TeamsTeamSlugPermissionsResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) PostV1TeamsTeamSlugPermissions(ctx context.Context, request operations.PostV1TeamsTeamSlugPermissionsRequest) (*operations.PostV1TeamsTeamSlugPermissionsResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions/", request, nil)
 	if err != nil {
@@ -460,7 +460,7 @@ func (s *presetManagerAPIsGreaterThanPermissions) PostV1TeamsTeamSlugPermissions
 //
 // - _**Max number of grantees to be appended per request is 100.**_
 // - _**Duplicate grantees will be ignored.**_
-func (s *presetManagerAPIsGreaterThanPermissions) PostV1TeamsTeamSlugPermissionsPermissionNameGrantees(ctx context.Context, request operations.PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) (*operations.PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse, error) {
+func (s *PresetManagerAPIsGreaterThanPermissions) PostV1TeamsTeamSlugPermissionsPermissionNameGrantees(ctx context.Context, request operations.PostV1TeamsTeamSlugPermissionsPermissionNameGranteesRequest) (*operations.PostV1TeamsTeamSlugPermissionsPermissionNameGranteesResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/v1/teams/{TeamSlug}/permissions/{PermissionName}/grantees", request, nil)
 	if err != nil {

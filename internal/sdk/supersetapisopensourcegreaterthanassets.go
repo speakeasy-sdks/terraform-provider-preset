@@ -13,18 +13,18 @@ import (
 	"strings"
 )
 
-// supersetAPIsOpenSourceGreaterThanAssets - APIs to export/import an `assets` ZIP file from the Workspace, which includes all:
+// SupersetAPIsOpenSourceGreaterThanAssets - APIs to export/import an `assets` ZIP file from the Workspace, which includes all:
 //
 // *   databases.
 // *   datasets.
 // *   charts.
 // *   saved queries.
-type supersetAPIsOpenSourceGreaterThanAssets struct {
+type SupersetAPIsOpenSourceGreaterThanAssets struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSupersetAPIsOpenSourceGreaterThanAssets(sdkConfig sdkConfiguration) *supersetAPIsOpenSourceGreaterThanAssets {
-	return &supersetAPIsOpenSourceGreaterThanAssets{
+func newSupersetAPIsOpenSourceGreaterThanAssets(sdkConfig sdkConfiguration) *SupersetAPIsOpenSourceGreaterThanAssets {
+	return &SupersetAPIsOpenSourceGreaterThanAssets{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -53,7 +53,7 @@ func newSupersetAPIsOpenSourceGreaterThanAssets(sdkConfig sdkConfiguration) *sup
 // Alternatively, access the Workspace through the UI, and get the `{{WorkspaceSlug}}` and `{{WorkspaceRegion}}` from the URL -> `https://{{WorkspaceSlug}}.{{Region}}.preset.io/superset/welcome/`.
 //
 // ***Tip:*** If used in Postman, select `Save Response` and `Save to a File` to get the zip export.
-func (s *supersetAPIsOpenSourceGreaterThanAssets) GetAPIV1AssetsExport(ctx context.Context, request operations.GetAPIV1AssetsExportRequest) (*operations.GetAPIV1AssetsExportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAssets) GetAPIV1AssetsExport(ctx context.Context, request operations.GetAPIV1AssetsExportRequest) (*operations.GetAPIV1AssetsExportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/assets/export/"
 
@@ -119,7 +119,7 @@ func (s *supersetAPIsOpenSourceGreaterThanAssets) GetAPIV1AssetsExport(ctx conte
 // *   `{{DatabaseYAMLFile}}` by the database YAML File you can find in your chart export under the folder `Databases`.
 // *   `{{DatabasePassword}}` by your database password
 // *   Chose your Chart Export Zip file as a value for the `formData`.
-func (s *supersetAPIsOpenSourceGreaterThanAssets) PostAPIV1AssetsImport(ctx context.Context, request operations.PostAPIV1AssetsImportRequest) (*operations.PostAPIV1AssetsImportResponse, error) {
+func (s *SupersetAPIsOpenSourceGreaterThanAssets) PostAPIV1AssetsImport(ctx context.Context, request operations.PostAPIV1AssetsImportRequest) (*operations.PostAPIV1AssetsImportResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/api/v1/assets/import/"
 
