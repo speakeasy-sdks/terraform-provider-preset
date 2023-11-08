@@ -1,4 +1,4 @@
-module Preset
+module github.com/Preset/terraform-provider-Preset
 
 go 1.18
 

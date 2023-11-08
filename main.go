@@ -7,7 +7,7 @@ import (
 	"flag"
 	"log"
 
-	"Preset/internal/provider"
+	"github.com/Preset/terraform-provider-Preset/internal/provider"
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 )
 

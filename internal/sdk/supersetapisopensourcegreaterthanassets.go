@@ -3,11 +3,11 @@
 package sdk
 
 import (
-	"Preset/internal/sdk/pkg/models/operations"
-	"Preset/internal/sdk/pkg/utils"
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/Preset/terraform-provider-Preset/internal/sdk/pkg/models/operations"
+	"github.com/Preset/terraform-provider-Preset/internal/sdk/pkg/utils"
 	"io"
 	"net/http"
 	"strings"

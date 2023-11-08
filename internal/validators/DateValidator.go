@@ -3,8 +3,8 @@
 package validators
 
 import (
-	"Preset/internal/sdk/pkg/types"
 	"context"
+	"github.com/Preset/terraform-provider-Preset/internal/sdk/pkg/types"
 	"github.com/hashicorp/terraform-plugin-framework-validators/helpers/validatordiag"
 	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
 )

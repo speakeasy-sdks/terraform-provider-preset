@@ -3,9 +3,9 @@
 package provider
 
 import (
-	"Preset/internal/sdk"
-	"Preset/internal/sdk/pkg/models/shared"
 	"context"
+	"github.com/Preset/terraform-provider-Preset/internal/sdk"
+	"github.com/Preset/terraform-provider-Preset/internal/sdk/pkg/models/shared"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/provider"

@@ -12,7 +12,7 @@ import (
 	"time"
 	"unsafe"
 
-	"Preset/internal/sdk/pkg/types"
+	"github.com/Preset/terraform-provider-Preset/internal/sdk/pkg/types"
 
 	"github.com/ericlagergren/decimal"
 )
