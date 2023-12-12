@@ -10,7 +10,7 @@ terraform {
   required_providers {
     Preset = {
       source  = "Preset/Preset"
-      version = "0.14.1"
+      version = "0.15.0"
     }
   }
 }
@@ -44,6 +44,8 @@ TF_REATTACH_PROVIDERS=... terraform apply
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
+
+
 <!-- End Available Resources and Operations [operations] -->
 
 

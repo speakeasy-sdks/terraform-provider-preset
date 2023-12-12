@@ -128,7 +128,7 @@ terraform {
   required_providers {
     Preset = {
       source  = "Preset/Preset"
-      version = "0.14.1"
+      version = "0.15.0"
     }
   }
 }
