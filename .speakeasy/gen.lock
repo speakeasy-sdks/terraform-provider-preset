@@ -4,16 +4,16 @@ management:
   docChecksum: a304baf139761ebfcc7f929d9b78cb39
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 0.16.3
-  configChecksum: 8650a4f2075e7a50a929fe64169d243e
+  generationVersion: 2.237.2
+  releaseVersion: 0.16.4
+  configChecksum: fe305a23926553a23b46cc2317bb1dff
   repoURL: https://github.com/speakeasy-sdks/terraform-provider-preset.git
   repoSubDirectory: .
   published: true
 features:
   terraform:
     core: 3.8.4
-    globalSecurity: 2.81.2
+    globalSecurity: 2.81.3
     globalServerURLs: 2.82.1
 generatedFiles:
   - internal/sdk/supersetapisopensourcegreaterthanannotationlayers.go
