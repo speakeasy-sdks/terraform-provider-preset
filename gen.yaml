@@ -5,8 +5,10 @@ generation:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
 terraform:
-  version: 0.16.4
+  version: 0.17.0
   author: Preset
   imports:
     option: openapi
